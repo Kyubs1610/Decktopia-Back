@@ -2,10 +2,22 @@
   "name": "decktopia_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.mjs"
   },
   "author": "",
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kyubs1610/Decktopia-Back.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Kyubs1610/Decktopia-Back/issues"
+  },
+  "homepage": "https://github.com/Kyubs1610/Decktopia-Back#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
