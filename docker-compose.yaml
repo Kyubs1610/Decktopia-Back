@@ -1,0 +1,36 @@
+version: "3"
+services:
+  backend:
+    image: node:lts
+    working_dir: /code
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/src:/code/src
+      - ./backend/package.json:/code/package.json
+    command:
+      ['sh', '-cx', "npm i && touch bg.db && npm run build && npm run dev"]
+    # network_mode: host
+    networks:
+      public:
+  frontend:
+    image: node:lts
+    working_dir: /code
+    ports:
+      - "4173:4173"
+    volumes:
+      - ./frontend/src:/code/src
+      - ./frontend/img:/code/img
+      - ./frontend/vite.config.ts:/code/vite.config.ts
+      - ./frontend/index.html:/code/index.html
+      - ./frontend/package.json:/code/package.json
+    depends_on: 
+      - backend
+    command: ['sh', '-cx', "npm install && npm run build && npm run preview"]
+    # network_mode: host
+    networks:
+      public:
+networks:
+  public:
