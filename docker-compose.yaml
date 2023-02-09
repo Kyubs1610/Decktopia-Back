@@ -25,7 +25,7 @@ services:
       - ./frontend/src:/code/src
       - ./frontend/img:/code/img
       # - ./frontend/vite.config.ts:/code/vite.config.ts
-      - ./frontend/index.html:/code/index.html
+      # - ./frontend/index.html:/code/index.html
       - ./frontend/package.json:/code/package.json
     depends_on: 
       - backend
