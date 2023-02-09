@@ -11,7 +11,7 @@ services:
       - ./backend/src:/code/src
       - ./backend/package.json:/code/package.json
     command:
-      ['sh', '-cx', "npm i && touch bg.db && npm run build && npm run dev"]
+      ['sh', '-cx', "npm install && npm run build && npm run start"]
     # network_mode: host
     networks:
       public:
@@ -29,7 +29,7 @@ services:
       - ./frontend/package.json:/code/package.json
     depends_on: 
       - backend
-    command: ['sh', '-cx', "npm install && npm run build && npm run preview"]
+    command: ['sh', '-cx', "npm install && npm run build && npm run start"]
     # network_mode: host
     networks:
       public:
