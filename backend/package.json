@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "echo \"Info: no build specified\"",
+    "start": "echo \"Info: no start specified\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
