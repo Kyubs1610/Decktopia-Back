@@ -8,11 +8,16 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./backend/src:/code/src
+      - ./backend/config:/code/config
+      - ./backend/controllers:/code/controllers
       - ./backend/package.json:/code/package.json
+      - ./backend/server.mjs:/code/server.mjs
+      - ./backend/.env:/code/.env
     command:
-      ['sh', '-cx', "npm install && npm run build && npm run start"]
+      ['sh', '-cx', "npm install && npm run start"]
     # network_mode: host
+    depends_on:
+      - database
     networks:
       public:
       private:
@@ -23,7 +28,7 @@ services:
       - "4173:4173"
     volumes:
       - ./frontend/src:/code/src
-      - ./frontend/img:/code/img
+      - ./frontend/public:/code/public
       - ./frontend/vite.config.ts:/code/vite.config.ts
       - ./frontend/index.html:/code/index.html
       - ./frontend/package.json:/code/package.json
@@ -35,12 +40,14 @@ services:
       public:
   database:
     image: postgres:15.1-alpine
+    container_name: pgserver
     restart: always
     environment:
-      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_PASSWORD=1234
     networks:
       - private
     ports:
+      - 3000:3000
       - 5432:5432
     volumes:
       - db-data:/var/lib/postgresql/data

@@ -2,7 +2,7 @@
   "name": "decktopia_frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "/public/index.html",
   "scripts": {
     "build": "vite build",
     "start": "vite",
