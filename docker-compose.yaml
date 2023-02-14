@@ -25,7 +25,7 @@ services:
     image: node:lts
     working_dir: /code
     ports:
-      - "4173:4173"
+      - "8127:8127"
     volumes:
       - ./frontend/src:/code/src
       - ./frontend/public:/code/public
