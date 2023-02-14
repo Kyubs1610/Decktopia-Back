@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "echo \"Info: no build specified\"",
-    "start": "node server.mjs",
+    "start": "DEBUG=* node server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
