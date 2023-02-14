@@ -23,7 +23,7 @@ export const register = async (req, res) => {
 export const deleteUser = async (req, res) => {
     try {
         const { id } = req.params;
-        const deleteUser = await Pool.query("DELETE FROM users WHERE id = $1", [id]);
+        const deleteUser = await Pool.query("DELETE FROM users WHERE user_id = $1", [id]);
         res.json("User was deleted!");
     } catch (error) {
         console.error(error.message);
@@ -31,16 +31,17 @@ export const deleteUser = async (req, res) => {
 }
 
 // forgot password
-export const forgotPassword = async ( req, rest ) =>{
+export const forgotPassword = async ( req, res ) =>{
     try {
         const { id } = req.params
         const { password } = req.body
         const update = await Pool.query(
-        "UPDATE users SET password = $1 WHERE id = $2"
+        "UPDATE users SET password = $1 WHERE user_id = $2",
         [password, id]
         )
+        res.json("Password was updated!")
     } catch (error) {
         console.error(error.message)
-        res.status(500).send({ message: "An error occurred while trying to update the password" });
+        res.status(500).send({ message: error.message });
     }
 }
