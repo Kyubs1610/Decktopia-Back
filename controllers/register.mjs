@@ -29,3 +29,18 @@ export const deleteUser = async (req, res) => {
         console.error(error.message);
     }
 }
+
+// forgot password
+export const forgotPassword = async ( req, rest ) =>{
+    try {
+        const { id } = req.params
+        const { password } = req.body
+        const update = await Pool.query(
+        "UPDATE users SET password = $1 WHERE id = $2"
+        [password, id]
+        )
+    } catch (error) {
+        console.error(error.message)
+        res.status(500).send({ message: "An error occurred while trying to update the password" });
+    }
+}

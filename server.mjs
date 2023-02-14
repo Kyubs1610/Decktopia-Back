@@ -2,8 +2,8 @@ import Express from "express";
 import bodyParser from "body-parser";
 import * as dotenv from "dotenv";
 import { dbConnect } from "./config/dbConnect.mjs";
-import { register, deleteUser } from "./controllers/register.mjs";
-import { login, getUsers } from "./controllers/login.mjs";
+import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
+import { login, getUsers, logout } from "./controllers/login.mjs";
 import { getCards, getCard, createCard } from "./controllers/cards.mjs";
 
 // connection server
@@ -17,16 +17,19 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 // routes
 server.get("/", (req, res) => {
-    res.send("Hello World!");
+    res.send("Home page");
 });
 
-server.post("/register", register);
-server.post("/login", login);
-server.get("/users", getUsers);
-server.delete("/users/:id", deleteUser)
-server.get("/cards", getCards);
-server.get("/cards/:card_id", getCard);
-server.post("/card", createCard);
+server.post("/register", register); //reigister
+server.put("/register/:id", forgotPassword) //update  user password
+server.post("/login", login); //login
+server.get("/users", getUsers); //get all users
+server.delete("/users/:id", logout) //logout user it deletes the user
+server.get("/users/:id", getUsers); //get userProfile
+server.delete("/users/:id", deleteUser) //delete user
+server.get("/cards", getCards); //get all cards
+server.get("/cards/:card_id", getCard); //get one card
+server.post("/card", createCard); //create a card
 
 
 server.listen(PORT, () => { console.log(`Server listening on port ${PORT}`); });
