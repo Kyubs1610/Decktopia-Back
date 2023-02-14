@@ -45,23 +45,23 @@ export const getUsers = async (req, res) => {
   }
 }
 
-//logout
-export const logout = async ( req, res ) =>{
-  const { id } = req.params
-  try {
-    const logout = await Pool.query(
-      "SELECT * FROM users where id = $1",
-      [id]
-    )
-    if (logout.rows.length === 0) {
-      return res.status (404)
-      .send({ message: "succesfully logged out " })
-    }
-    } catch (error) {
-      console.error(error.message)
-      res.status(500).send({ message: "An error occurred while trying to log out" }
-    )}
-  }
+// //logout
+// export const logout = async ( req, res ) =>{
+//   const { id } = req.params
+//   try {
+//     const logout = await Pool.query(
+//       "SELECT * FROM users where id = $1",
+//       [id]
+//     )
+//     if (logout.rows.length === 0) {
+//       return res.status (404)
+//       .send({ message: "succesfully logged out " })
+//     }
+//     } catch (error) {
+//       console.error(error.message)
+//       res.status(500).send({ message: "An error occurred while trying to log out" }
+//     )}
+//   }
 
 
 

@@ -19,6 +19,9 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.get("/", (req, res) => {
     res.send("Home page");
 });
+server.get("/logout", (req, res) => {
+    res.send("Home page");
+}); //define the home page and use the render method to render the index.ejs file
 
 server.post("/register", register); //reigister
 server.put("/register/:id", forgotPassword) //update  user password
