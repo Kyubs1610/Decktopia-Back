@@ -1,4 +1,5 @@
 import "./profile.css";
+import "..//..//App.css";
 import React, { useState, useRef } from "react";
 import Header from "..//Header_and_footer/header";
 import image from "..//..//..//src/Asset/card_and_pack/back_empty.png";
@@ -6,7 +7,7 @@ import image from "..//..//..//src/Asset/card_and_pack/back_empty.png";
 function ProfilePage() {
   const [avatar, setAvatar] = useState(null);
   const [name, setName] = useState("");
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef();
 
   const handleAvatarChange = (event) => {
     const newAvatar = event.target.files[0];
@@ -46,9 +47,9 @@ function ProfilePage() {
         />
       
       <div>
-        <label htmlFor="name-input">Pseudo</label>
-        <input id="name-input" type="text" value={name} onChange={handleNameChange} />
-        {name.length > 0 && <div className="name-preview">Hello {name}</div>}
+        <label className="pseudo" htmlFor="name-input">Pseudo</label>
+        <input className="pseudo" id="name-input" type="text" value={name} onChange={handleNameChange} />
+        {name.length > 0 && <div className="pseudo">Hello {name}</div>}
       </div>
       </div>
       </div>

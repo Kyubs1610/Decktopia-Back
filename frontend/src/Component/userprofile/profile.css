@@ -4,12 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   border: 2px solid #02EEFB;
   overflow: hidden;
   margin-top: 10px;
+  position: relative;
+  margin-right: 10rem;
 }
 
 /* Style the avatar image */
@@ -17,7 +19,7 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
-}
+  }
 
 .avatar-text {
   font-size: 10px;
@@ -26,19 +28,30 @@
 .profileContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center ;
   align-items: center;
+  position: relative;
+  gap: 50px;
+  
 }
+
 
 
 .collection-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 20px 3px #fd149d,
+              inset 0 0 20px 3px #fd149d;
+  background-color: rgba(43, 41, 69, 0.5);
+  margin: auto;
+  padding: 3%;
+  
   border-radius: 8px;
-  margin: 0 8em 0 8em;
+  width: 70%;
+  height: auto;
+
 }
 
 .collection-card {
@@ -59,4 +72,5 @@ filter: brightness(0.5);
   justify-content: center;
   align-items: center;
   margin: 50px;
+  position: relative;
 }

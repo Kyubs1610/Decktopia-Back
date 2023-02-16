@@ -11,20 +11,20 @@ export default function Auth() {
 
                         <h3 className="Auth-form-title">Register</h3>
 
-                        <div class="input-group">
+                        <div className="input-group">
                             <div id="username">
-                                <input required="" type="text" name="text" autocomplete="off" class="input" />
-                                <label class="user-label">Username</label>
+                                <input required="" type="text" name="text" autoComplete="off" className="input" />
+                                <label className="user-label">Username</label>
                             </div>
 
                             <div id="email">
-                                <input required="" type="text" name="text" autocomplete="off" class="input" />
-                                <label class="user-label">Email</label>
+                                <input required="" type="text" name="text" autoComplete="off" className="input" />
+                                <label className="user-label">Email</label>
                             </div>
 
                             <div id="pass">
-                                <input required="" type="password" name="text" autocomplete="off" class="input" />
-                                <label class="user-label">Password</label>
+                                <input required="" type="password" name="text" autoComplete="off" className="input" />
+                                <label className="user-label">Password</label>
                             </div>
                         </div>
 

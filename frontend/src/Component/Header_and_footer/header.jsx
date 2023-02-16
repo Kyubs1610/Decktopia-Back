@@ -12,9 +12,10 @@ export default function Header() {
 
 <ul class="menu">
   
-  <li><a href="#home">Home</a></li>
-  <li><a href="#collection">Pack</a></li>
-  <li><a href="#profile">Profile</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/collection">Pack</a></li>
+  <li><a href="/profile">Profile</a></li>
+  <li><a href="/login">Login</a></li>
 </ul>
 </nav>
         </div>
