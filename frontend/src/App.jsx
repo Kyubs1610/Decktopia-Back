@@ -5,7 +5,7 @@ import Home from "./Component/Home/Home";
 import React from 'react';
 import Header from './Component/Header_and_footer/header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Profilepage from './Component/userprofile/Profile';
+import Profilepage from './Component/userprofile/profile';
 
 
 function App() {
