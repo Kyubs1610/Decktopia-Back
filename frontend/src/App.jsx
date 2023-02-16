@@ -5,6 +5,8 @@ import Home from "./Component/Home/Home";
 import React from 'react';
 import Header from './Component/Header_and_footer/header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Profilepage from './Component/userprofile/Profile';
+
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/login" element={<Auth/>}/>
                     <Route path="/register" element={<Register />} />
-                    {/* <Route path="/profile" element={<ProfilePage/>}/> */}
+                    <Route path="/profile" element={<Profilepage/>}/>
                     {/* <Route path="/home/user/checkout" element={<Checkout/>}/>
                     <Route path="/home/LoginPage/ForgotPassword" element={<ForgotPassword/>}/> */}
                 </Routes>
