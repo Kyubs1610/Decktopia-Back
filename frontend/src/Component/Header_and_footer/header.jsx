@@ -10,7 +10,7 @@ export default function Header() {
 
   <img src={logo} alt="logo" className="logonav"/>
 
-<ul class="menu">
+<ul className="menu">
   
   <li><a href="/">Home</a></li>
   <li><a href="/collection">Pack</a></li>

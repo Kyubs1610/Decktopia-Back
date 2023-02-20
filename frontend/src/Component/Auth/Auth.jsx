@@ -1,6 +1,30 @@
 import React from "react"
 import "./Auth.css"
 
+fetch('http://localhost:8127/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    username: 'decktopia',
+    password: '1234'
+  })
+})
+.then(response => {
+  if (response.ok) {
+    // Handle successful response
+    console.log('Login successful!');
+  } else {
+    // Handle error response
+    console.error('Login failed.');
+  }
+})
+.catch(error => {
+  // Handle network error
+  console.error('Network error:', error);
+});
+
 export default function Auth() {
 
     return (
@@ -31,9 +55,7 @@ export default function Auth() {
                     </div>
 
                     <div id="password">
-                        <a href="/auth/forgot">forgot password</a>
-                        <p> - </p>
-                        <a href="/auth/forgot">Reset</a>
+                        <a href="/register">Signup</a>
                     </div>
                 </div>
             </form>
