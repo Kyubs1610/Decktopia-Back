@@ -1,10 +1,13 @@
-import Express from "express";
+import Express from 'express';
 import bodyParser from "body-parser";
 import * as dotenv from "dotenv";
 import { dbConnect } from "./config/dbConnect.mjs";
 import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
 import { login, getUsers, logout } from "./controllers/login.mjs";
 import { getCards, getCard, createCard } from "./controllers/cards.mjs";
+import pkg from 'cors';
+
+const cors = pkg;
 
 // connection server
 dotenv.config();
@@ -15,6 +18,8 @@ dbConnect()
 // body parser
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
+// cors
+server.use(cors());
 // routes
 server.get("/", (req, res) => {
     res.send("Home page");
