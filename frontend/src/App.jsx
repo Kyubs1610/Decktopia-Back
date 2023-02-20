@@ -1,5 +1,6 @@
 import './App.css';
 import Auth from "./Component/Auth/Auth";
+
 import Register from "./Component/Register/Register";
 import Home from "./Component/Home/Home";
 import React from 'react';
