@@ -8,7 +8,7 @@ fetch('http://localhost:8000/login', {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    email: 'decktopia',
+    email: 'decktopia@example.com',
     password: '1234'
   })
 })
