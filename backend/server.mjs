@@ -5,7 +5,9 @@ import { dbConnect } from "./config/dbConnect.mjs";
 import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
 import { login, getUsers, logout } from "./controllers/login.mjs";
 import { getCards, getCard, createCard } from "./controllers/cards.mjs";
-import { cors } from 'cors';
+import pkg from 'cors';
+
+const cors = pkg;
 
 // connection server
 dotenv.config();
@@ -17,7 +19,7 @@ dbConnect()
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 // cors
-server.user(cors());
+server.use(cors());
 // routes
 server.get("/", (req, res) => {
     res.send("Home page");
