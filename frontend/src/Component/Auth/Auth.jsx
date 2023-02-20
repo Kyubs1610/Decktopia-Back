@@ -1,14 +1,14 @@
 import React from "react"
 import "./Auth.css"
 
-fetch('https://decktopia.netlify.app/login', {
+fetch('http://localhost:8000/login', {
 >>>>>>>>> Temporary merge branch 2
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    username: 'decktopia',
+    email: 'decktopia@example.com',
     password: '1234'
   })
 })
