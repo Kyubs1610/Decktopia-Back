@@ -28,7 +28,7 @@ export default function Register()
       })
     })
     .then(response => {
-      if (response.ok) {
+        if (response.ok) {
         // Redirect the user to the profile page upon successful registration
         navigateTo.push('/profile');
       } else {
