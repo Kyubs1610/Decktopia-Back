@@ -90,7 +90,7 @@ export default function Register()
                   value={email}
                   onChange={handleEmailChange}
                 />
-                <label className="user-label">Email</label>
+                <label className="user-label">Email </label>
               </div>
               <br />
 
