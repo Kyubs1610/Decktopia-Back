@@ -1,14 +1,14 @@
 import React from "react"
 import "./Auth.css"
 
-fetch('https://decktopia.netlify.app/login', {
+fetch('http://localhost:8000/login', {
 
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    username: 'decktopia',
+    email: 'decktopia',
     password: '1234'
   })
 })
