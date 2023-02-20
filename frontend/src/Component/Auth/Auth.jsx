@@ -36,13 +36,25 @@ export default function Auth() {
                     <h3 className="Auth-form-title">Sign In</h3>
 
                     <div className="input-group">
-                        <div id="username">
-                            <input required="" type="text" name="text" autoComplete="off" className="input"/>
-                            <label className="user-label">Username</label>
-                        </div>
+                    <div id="username">
+                      <input
+                          required
+                          type="text"
+                          name="username"
+                          autoComplete="off"
+                          className="input"
+                       />
+                <label className="user-label">Username</label>
+              </div>
 
                         <div id="pass">
-                            <input required="" type="password" name="text" autoComplete="off" className="input"/>
+                      <input
+                          required
+                          type="password"
+                          name="password"
+                          autoComplete="off"
+                          className="input"
+                        />
                             <label className="user-label">Password</label>
                         </div>
                     </div>
