@@ -3,6 +3,7 @@ import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
 import image1 from "../..//..//src/Asset/card_and_pack/shibs.png";
 import image2 from "../..//..//src/Asset/card_and_pack/back_empty.png";
+import Header from "..//Header_and_footer/header";
 
 
 import { useRef, useEffect } from 'react';
@@ -31,6 +32,8 @@ function Collection() {
   const images = [image1,image2];
 
   return (
+    <div>
+          <Header /> <br /><br /><br /><br />
     <div ref={sliderRef} className="glide" style={{ height: 'auto',width: '100%' }}>
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
@@ -49,6 +52,7 @@ function Collection() {
           Next
         </button>
       </div>
+    </div>
     </div>
   );
 }
