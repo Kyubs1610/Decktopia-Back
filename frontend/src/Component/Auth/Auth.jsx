@@ -2,7 +2,7 @@ import React from "react"
 import "./Auth.css"
 
 fetch('http://localhost:8000/login', {
->>>>>>>>> Temporary merge branch 2
+
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
