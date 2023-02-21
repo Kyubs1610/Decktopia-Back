@@ -1,0 +1,76 @@
+  
+ /* Style the avatar container */
+/* .avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid #02EEFB;
+  overflow: hidden;
+  margin-top: 10px;
+  position: relative;
+  margin-right: 10rem;
+} */
+
+/* Style the avatar image */
+/* .avatar {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  }
+
+.avatar-text {
+  font-size: 10px;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+  align-items: center;
+  position: relative;
+  gap: 50px;
+  
+}
+
+
+
+.collection-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  position: relative;
+  box-shadow: 0 0 20px 3px #fd149d,
+              inset 0 0 20px 3px #fd149d;
+  background-color: rgba(43, 41, 69, 0.5);
+  margin: auto;
+  padding: 3%;
+  
+  border-radius: 8px;
+  width: 70%;
+  height: auto;
+
+}
+
+.collection-card {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 10rem;
+  z-index: 2;
+}
+
+.collection-card:hover {
+filter: brightness(0.5);
+}
+
+
+.justifyCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  position: relative;
+} */

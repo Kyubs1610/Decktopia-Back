@@ -1,0 +1,28 @@
+/* 
+.main{
+    position: relative;
+    top: 5%;
+    box-shadow: 0 0 20px 3px #fd149d,
+                inset 0 0 20px 3px #fd149d;
+    background-color: rgba(43, 41, 69, 0.5);
+    margin: auto;
+    padding: 3%;
+    margin-top: 120px;
+    border-radius: 8px;
+    width: 70%;
+    height: auto;
+}
+
+h3{
+    font-family: 'Megrim', cursive;
+    font-size: xx-large;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 2px #fd149d, 
+                 0px 0px 6px #fd149d,
+                 0px 0px 10px #fd149d;
+    letter-spacing: 0.2em;
+}
+
+p{
+    color: antiquewhite;
+} */

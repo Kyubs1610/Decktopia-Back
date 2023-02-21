@@ -6,13 +6,18 @@ services:
     environment:
       - NODE_ENV=development
     ports:
-      - "8080:8080"
+      - "8000:8000"
     volumes:
-      - ./backend/src:/code/src
+      - ./backend/config:/code/config
+      - ./backend/controllers:/code/controllers
       - ./backend/package.json:/code/package.json
+      - ./backend/server.mjs:/code/server.mjs
+      - ./backend/.env:/code/.env
     command:
-      ['sh', '-cx', "npm i && touch bg.db && npm run build && npm run dev"]
+      ['sh', '-cx', "npm install && npm run start"]
     # network_mode: host
+    depends_on:
+      - database
     networks:
       public:
       private:
@@ -20,30 +25,37 @@ services:
     image: node:lts
     working_dir: /code
     ports:
-      - "4173:4173"
+      - "8127:8127"
     volumes:
       - ./frontend/src:/code/src
-      - ./frontend/img:/code/img
-      # - ./frontend/vite.config.ts:/code/vite.config.ts
+      - ./frontend/public:/code/public
+      - ./frontend/vite.config.ts:/code/vite.config.ts
       - ./frontend/index.html:/code/index.html
       - ./frontend/package.json:/code/package.json
     depends_on: 
       - backend
-    command: ['sh', '-cx', "npm install && npm run build && npm run preview"]
+    command: ['sh', '-cx', "npm install --verbose && npm run build && npm run start"]
     # network_mode: host
     networks:
       public:
   database:
     image: postgres:15.1-alpine
+    container_name: pgserver
     restart: always
     environment:
-      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_PASSWORD=1234
     networks:
       - private
     ports:
+      - 3000:3000
       - 5432:5432
     volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
       - db-data:/var/lib/postgresql/data
+
 networks:
   public:
   private:
+
+volumes:
+  db-data: {}
