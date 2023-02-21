@@ -2,7 +2,6 @@ import React from "react"
 import "./Auth.css"
 
 fetch('http://localhost:8000/login', {
->>>>>>>>> Temporary merge branch 2
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
@@ -16,6 +15,7 @@ fetch('http://localhost:8000/login', {
   if (response.ok) {
     // Handle successful response
     console.log('Login successful!');
+    window.location.href = '/profile';
   } else {
     // Handle error response
     console.error('Login failed.');
@@ -62,9 +62,9 @@ export default function Auth() {
 
             
                     <div className="d-grid gap-2 mt-3">
-                        <button type="submit" className="btn btn-primary">
+                            <a href="/profile"><button type="submit" className="btn btn-primary">
                             Submit
-                        </button>
+                        </button></a>
                     </div>
 
                     <div id="password">

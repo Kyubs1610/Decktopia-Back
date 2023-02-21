@@ -125,9 +125,9 @@ export default function Register()
             {errorMessage && <div className="error-message">{errorMessage}</div>}
 
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
+              <a href='/login'><button type="submit" className="btn btn-primary">
                 Create Account
-              </button>
+              </button></a>
             </div>
 
             <div id="password">
