@@ -7,14 +7,14 @@ export default function Pack() {
         <>
             <Header /> <br /><br /><br /><br />
             <div className="pack">
-                <div className="main">
+                
                     <h3>Buy a pack</h3>
 
-                    <a><img src="../..//..//src/Asset/card_and_pack/shibs.png"></img></a>
+                    <a><img className="packes" src="../..//..//src/Asset/card_and_pack/back.png"></img></a>
 
                     <a href="/collection"><button>see collection</button></a>
                 </div>
-            </div>
+            
         </>
     )
 }

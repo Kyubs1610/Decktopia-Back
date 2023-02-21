@@ -6,7 +6,6 @@ import image from "..//..//..//src/Asset/card_and_pack/back_empty.png";
 
 function ProfilePage() {
   const [avatar, setAvatar] = useState(null);
-  const [name, setName] = useState("");
   const fileInputRef = useRef();
 
   const handleAvatarChange = (event) => {
@@ -14,18 +13,14 @@ function ProfilePage() {
     setAvatar(newAvatar);
   };
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleAvatarClick = () => {
+   const handleAvatarClick = () => {
     fileInputRef.current.click();
   };
   
 
   return (
     <div>
-        <Header/> <br/><br/><br/><br/>
+        <Header/> <br/><br/><br/><br/><br/>
      <div>
      <div className="profileContainer"> 
         <label htmlFor="avatar-input"></label>
@@ -47,9 +42,8 @@ function ProfilePage() {
         />
       
       <div>
-        <label className="pseudo" htmlFor="name-input">Pseudo</label>
-        <input className="pseudo" id="name-input" type="text" value={name} onChange={handleNameChange} />
-        {name.length > 0 && <div className="pseudo">Hello {name}</div>}
+        <label className="userinfo" >Welcome Pseudo</label> <br/>
+        <label className="userinfo" >Card Collection : ?/20</label>
       </div>
       </div>
       </div>
