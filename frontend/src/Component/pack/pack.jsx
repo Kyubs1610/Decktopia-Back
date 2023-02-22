@@ -84,7 +84,7 @@ export default function CardFlip() {
                     <img src="" />
                   </div>
                   <div className="tras">
-                    <img src="../..//..//src/Asset/card_and_pack/back.png" />
+                    <img src="https://cdn.discordapp.com/attachments/989739808286974002/1077894624015810590/back.png" />
                   </div>
                 </div>
               </li>
@@ -95,7 +95,7 @@ export default function CardFlip() {
                     <img src="https://images.pokemoncard.io/images/swsh6/swsh6-157_hires.png" />
                   </div>
                   <div className="tras">
-                    <img src="../..//..//src/Asset/card_and_pack/back.png" />
+                    <img src="https://cdn.discordapp.com/attachments/989739808286974002/1077894624015810590/back.png" />
                   </div>
                 </div>
               </li>
