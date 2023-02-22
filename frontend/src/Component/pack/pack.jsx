@@ -37,7 +37,7 @@ export default function CardFlip() {
             <div className="pack-flash-pack">
               <img
                 className="front"
-                src="../..//..//src/Asset/card_and_pack/back.png"
+                src="https://cdn.discordapp.com/attachments/989739808286974002/1077894624015810590/back.png"
               />
               <div className="top">
                 <img src="https://i.imgur.com/b1qmOW6.png" />
