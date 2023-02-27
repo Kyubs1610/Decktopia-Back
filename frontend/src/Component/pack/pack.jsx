@@ -9,22 +9,23 @@ export default function CardFlip() {
                 
                   const flip = (event, index) => {
                     event.preventDefault();
-                    if (!flippedCards.includes(index)) {
-                      setFlippedCards([...flippedCards, index]);
+                    const cards = document.getElementsByClassName("carta");
+                    const card = cards[index];
+                    if (card.style.transform === "rotateY(180deg)") {
+                      card.style.transform = "rotateY(0deg)";
                     } else {
-                      setFlippedCards(flippedCards.filter((cardIndex) => cardIndex !== index));
+                      card.style.transform = "rotateY(180deg)";
                     }
-                  };
+                  }
                 
                   const togglePack = () => {
                     setPackOpened(!packOpened);
                   };
                 
                   return (
+                    <>
                     <div>
-                      <button className="btn-open" onClick={togglePack}>
-                        Open This Pack
-                      </button>
+                      
                       <div
                         id="pack-opened"
                         className={`pack-content ${packOpened ? "open" : ""}`}
@@ -73,15 +74,14 @@ export default function CardFlip() {
                       marginTop: "0px",
                     }}
                   ></div>
-                  <div className="tras">
-                   </div>
+                  
                 </div>
               </li>
 
               <li className="card-02 gold">
                 <div className="carta" onClick={(e) => flip(e, 1)}>
                   <div className="frente">
-                    <img src="" />
+                    <img src="https://images.pokemoncard.io/images/swsh6/swsh6-157_hires.png" />
                   </div>
                   <div className="tras">
                     <img src="https://cdn.discordapp.com/attachments/989739808286974002/1077894624015810590/back.png" />
@@ -99,6 +99,17 @@ export default function CardFlip() {
                   </div>
                 </div>
               </li>
+              <li className="card-04 bronze">
+                <div className="carta" onClick={(e) => flip(e, 3)}>
+                  <div className="frente">
+                    <img src="https://images.pokemoncard.io/images/swsh6/swsh6-157_hires.png" />
+                  </div>
+                  <div className="tras">
+                    <img src="https://cdn.discordapp.com/attachments/989739808286974002/1077894624015810590/back.png" />
+                  </div>
+                </div>
+              </li>
+              
 
           </ul>
         </div>
@@ -106,5 +117,8 @@ export default function CardFlip() {
     </div>
   </div>
   
-
+<button className="btn-open" onClick={togglePack}>
+                        Open This Pack
+                      </button>
+                      </>
   )};  
