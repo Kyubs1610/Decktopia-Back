@@ -1,11 +1,14 @@
 import React from "react";
 import "./pack.css";
-import generateRandomInteger from "./random"
 // import Header from "..//Header_and_footer/header";
 import { useState } from "react";
+
 import kyubsninos from '../../Asset/card_and_pack/kyubsninos.png';
 import vador from "../../Asset/card_and_pack/card-vador.jpg";
 import optimus from '../../Asset/card_and_pack/card-optimus.jpg';
+
+import pickRandom from "./random";
+
 
 export default function CardFlip() {
 
@@ -22,6 +25,35 @@ export default function CardFlip() {
             card.style.transform = "rotateY(180deg)";
         }
     }
+
+    const cards = [
+        {
+            "id" : 0,
+            "name" : "card-1"
+        },
+        {
+            "id": 1,
+            "name": "card-2"
+        },
+        {
+            "id": 2,
+            "name": "card-3"
+        },
+        {
+            "id": 3,
+            "name": "card-4"
+        },
+        {
+            "id": 4,
+            "name": "card-5"
+        },
+        {
+            "id": 5,
+            "name": "card-6"
+        },
+    ]
+
+    console.log(pickRandom(cards));
                 
     const togglePack = () => {
         setPackOpened(!packOpened);
