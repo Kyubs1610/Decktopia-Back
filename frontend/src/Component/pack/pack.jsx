@@ -3,11 +3,13 @@ import "./pack.css";
 // import Header from "..//Header_and_footer/header";
 import { useState } from "react";
 
-import kyubsninos from '../../Asset/card_and_pack/kyubsninos.png';
-import vador from "../../Asset/card_and_pack/card-vador.jpg";
-import optimus from '../../Asset/card_and_pack/card-optimus.jpg';
+// import kyubsninos from '../../Asset/card_and_pack/kyubsninos.png';
+// import vador from "../../Asset/card_and_pack/card-vador.jpg";
+// import optimus from '../../Asset/card_and_pack/card-optimus.jpg';
 
 import pickRandom from "./random";
+import cards from "./cards.json";
+
 
 
 export default function CardFlip() {
@@ -25,35 +27,18 @@ export default function CardFlip() {
             card.style.transform = "rotateY(180deg)";
         }
     }
+    
+    const cardArray = pickRandom(cards);
+    console.log(cardArray)
 
-    const cards = [
-        {
-            "id" : 0,
-            "name" : "card-1"
-        },
-        {
-            "id": 1,
-            "name": "card-2"
-        },
-        {
-            "id": 2,
-            "name": "card-3"
-        },
-        {
-            "id": 3,
-            "name": "card-4"
-        },
-        {
-            "id": 4,
-            "name": "card-5"
-        },
-        {
-            "id": 5,
-            "name": "card-6"
-        },
-    ]
+    const card1 = cardArray[0];
 
-    console.log(pickRandom(cards));
+    const card2 = cardArray[1];
+
+    const card3 = cardArray[2];
+
+    const card4 = cardArray[3];
+    console.log(card1 + " --------------" + card2 + " --------------" + card3 + " --------------" + card4);
                 
     const togglePack = () => {
         setPackOpened(!packOpened);
@@ -101,7 +86,7 @@ export default function CardFlip() {
                                 <li className="card-02 gold">
                                     <div className="carta" onClick={(e) => flip(e, 1)}>
                                         <div className="frente">
-                                            <img src={optimus} />
+                                            <img src={card2} />
                                         </div>
                                         
                                         <div className="tras">
@@ -113,7 +98,7 @@ export default function CardFlip() {
                                 <li className="card-03 silver">
                                     <div className="carta" onClick={(e) => flip(e, 2)}>
                                         <div className="frente">
-                                            <img src={kyubsninos} />
+                                            <img src={card3} />
                                         </div>
                   
                                         <div className="tras">
@@ -125,7 +110,7 @@ export default function CardFlip() {
                                 <li className="card-04 bronze">
                                     <div className="carta" onClick={(e) => flip(e, 3)}>
                                         <div className="frente">
-                                            <img src={vador} />
+                                            <img src={card4} />
                                         </div>
                  
                                         <div className="tras">
