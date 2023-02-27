@@ -15,5 +15,10 @@ export default function pickRandom (cards){
         indexCardThree = generateRandomInteger(cards.length);
     }
 
-    return cards[indexCardOne].name;
+    var indexCardFour = generateRandomInteger(cards.length);
+    while (indexCardOne == indexCardFour || indexCardTwo == indexCardFour || indexCardThree == indexCardFour) {
+        indexCardFour = generateRandomInteger(cards.length);
+    }
+
+    return cards[indexCardOne].name + " / " + cards[indexCardTwo].name + " / " + cards[indexCardThree].name +  " / " + cards[indexCardFour].name;
 };
