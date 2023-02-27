@@ -341,14 +341,14 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     border: 2px solid #02EEFB;
     overflow: hidden;
     margin-top: 10px;
     position: relative;
-    margin-right: 10rem;
+    margin-right: 35rem;
 }
 
 /* Style the avatar image */
@@ -412,8 +412,18 @@ p {
     position: relative;
 }
 
-
+.userinfo{
+    font-size: larger;
+}
 /* PACK */ 
-/* .pack{
-    width: 100px;
-} */
+.pack{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.packes:hover{
+    box-shadow: 0 0 20px 3px #fd149d,
+    inset 0 0 20px 3px #fd149d;
+
+}
