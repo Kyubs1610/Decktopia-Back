@@ -1,5 +1,6 @@
 import React from "react";
 import "./pack.css";
+import generateRandomInteger from "./random"
 // import Header from "..//Header_and_footer/header";
 import { useState } from "react";
 
