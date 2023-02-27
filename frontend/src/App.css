@@ -17,6 +17,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #1D1231;
     height: 100%;
+    overflow: hidden;
 }
 
 code {
@@ -336,19 +337,20 @@ p {
 /* COLLECTON */ 
 
 
+
 /* Style the avatar container */
 .avatar-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     border: 2px solid #02EEFB;
     overflow: hidden;
     margin-top: 10px;
     position: relative;
-    margin-right: 10rem;
+    margin-right: 35rem;
 }
 
 /* Style the avatar image */
@@ -384,7 +386,7 @@ p {
     background-color: rgba(43, 41, 69, 0.5);
     margin: auto;
     padding: 3%;
-
+    
     border-radius: 8px;
     width: 70%;
     height: auto;
@@ -412,8 +414,18 @@ p {
     position: relative;
 }
 
-
+.userinfo{
+    font-size: larger;
+}
 /* PACK */ 
-/* .pack{
-    width: 100px;
-} */
+.pack{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.packes:hover{
+    box-shadow: 0 0 20px 3px #fd149d,
+    inset 0 0 20px 3px #fd149d;
+
+}
