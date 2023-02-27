@@ -1,6 +1,6 @@
 import React from "react";
 import "./pack.css";
-// import Header from "..//Header_and_footer/header";
+import Header from "..//Header_and_footer/header";
 import { useState } from "react";
 
 // import kyubsninos from '../../Asset/card_and_pack/kyubsninos.png';
@@ -47,6 +47,7 @@ export default function CardFlip() {
     return (
         <>
             <div>
+                 <Header /> <br /><br /><br /><br />
                 <div id="pack-opened" className={`pack-content ${packOpened ? "open" : ""}`}>
                     <div className="pack-content" style={{ display: "block", visibility: "visible" }}>
                         <div className="pack-flash">
