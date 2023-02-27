@@ -2,9 +2,16 @@ import React from "react";
 import "./pack.css";
 // import Header from "..//Header_and_footer/header";
 import { useState } from "react";
+
+import kyubsninos from '../../Asset/card_and_pack/kyubsninos.png';
+import vador from "../../Asset/card_and_pack/card-vador.jpg";
+import optimus from '../../Asset/card_and_pack/card-optimus.jpg';
+
 import pickRandom from "./random";
 
+
 export default function CardFlip() {
+
     const [flippedCards, setFlippedCards] = useState([]);
     const [packOpened, setPackOpened] = useState(false);
                 
@@ -51,7 +58,7 @@ export default function CardFlip() {
     const togglePack = () => {
         setPackOpened(!packOpened);
     };
-                
+            
     return (
         <>
             <div>
@@ -94,7 +101,7 @@ export default function CardFlip() {
                                 <li className="card-02 gold">
                                     <div className="carta" onClick={(e) => flip(e, 1)}>
                                         <div className="frente">
-                                            <img src="https://images.pokemoncard.io/images/swsh6/swsh6-157_hires.png" />
+                                            <img src={optimus} />
                                         </div>
                                         
                                         <div className="tras">
@@ -106,7 +113,7 @@ export default function CardFlip() {
                                 <li className="card-03 silver">
                                     <div className="carta" onClick={(e) => flip(e, 2)}>
                                         <div className="frente">
-                                            <img src="https://images.pokemoncard.io/images/swsh6/swsh6-157_hires.png" />
+                                            <img src={kyubsninos} />
                                         </div>
                   
                                         <div className="tras">
@@ -118,7 +125,7 @@ export default function CardFlip() {
                                 <li className="card-04 bronze">
                                     <div className="carta" onClick={(e) => flip(e, 3)}>
                                         <div className="frente">
-                                            <img src="https://images.pokemoncard.io/images/swsh6/swsh6-157_hires.png" />
+                                            <img src={vador} />
                                         </div>
                  
                                         <div className="tras">
@@ -137,4 +144,5 @@ export default function CardFlip() {
             <button className="btn-open" onClick={togglePack}>Open This Pack</button>
         </>
     )
-};  
+    
+} 
