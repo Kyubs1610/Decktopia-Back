@@ -31,16 +31,6 @@ export default function CardFlip() {
             card.style.transform = "rotateY(180deg)";
         }
     }
-
-    // var cardArray;
-    
-    // var card1 = "";
-
-    // var card2 = "";
-
-    // var card3 = "";
-
-    // var card4 = "";
     
                 
     const togglePack = () => {
@@ -50,18 +40,16 @@ export default function CardFlip() {
             cardArray = pickRandom(cards);
             console.log(cardArray);
 
-            card1 = cardArray[0];
+            card1 = cardArray[0].name;
 
-            card2 = cardArray[1];
+            card2 = cardArray[1].name;
 
-            card3 = cardArray[2];
+            card3 = cardArray[2].name;
 
-            card4 = cardArray[3];
+            card4 = cardArray[3].name;
         }
        
     };
-
-    console.log(card1 + " / " + card2 + " / " + card3 + " / " + card4);
             
     return (
         <>

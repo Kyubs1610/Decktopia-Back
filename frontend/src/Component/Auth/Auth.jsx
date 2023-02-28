@@ -63,9 +63,7 @@ export default function Auth() {
 
             
                     <div className="d-grid gap-2 mt-3">
-                            <a href="/profile"><button type="submit" className="btn btn-primary">
-                            Submit
-                        </button></a>
+                        <a href="/profile"><button type="submit" className="btn btn-primary"> Submit </button></a>
                     </div>
 
                     <div id="password">

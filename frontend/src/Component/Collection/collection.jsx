@@ -1,12 +1,12 @@
 import Glide from '@glidejs/glide';
 import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
-import image1 from "../..//..//src/Asset/card_and_pack/shibs.png";
+import image1 from "../..//..//src/Asset/card_and_pack/card-shibs.png";
 import image2 from "../..//..//src/Asset/card_and_pack/back_empty.png";
 import image3 from "../..//..//src/Asset/card_and_pack/card-aang.jpg";
 import image4 from "../..//..//src/Asset/card_and_pack/card-optimus.jpg";
 import image5 from "../..//..//src/Asset/card_and_pack/card-vador.jpg";
-import image6 from "../..//..//src/Asset/card_and_pack/kyubsninos.png";
+import image6 from "../..//..//src/Asset/card_and_pack/card-kyubsninos.png";
 import image7 from "../..//..//src/Asset/card_and_pack/card-mario.jpg";
 import image8 from "../..//..//src/Asset/card_and_pack/card-mickey.jpg";
 import image9 from "../..//..//src/Asset/card_and_pack/card-zidane.jpg";
