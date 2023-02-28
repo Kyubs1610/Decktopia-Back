@@ -1,13 +1,11 @@
-import Express from 'express';
+import Express from "express";
 import bodyParser from "body-parser";
+import cookie from "cookie-parser";
 import * as dotenv from "dotenv";
 import { dbConnect } from "./config/dbConnect.mjs";
 import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
-import { login, getUsers, logout } from "./controllers/login.mjs";
-import { getCards, getCard, createCard } from "./controllers/cards.mjs";
-import pkg from 'cors';
-
-const cors = pkg;
+import { login, getUsers } from "./controllers/login.mjs";
+import { getCards, getCard, createCard, updateCard, deleteCard } from "./controllers/cards.mjs";
 
 // connection server
 dotenv.config();
@@ -18,23 +16,28 @@ dbConnect()
 // body parser
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
-// cors
-server.use(cors());
+// cookie parser
+server.use(cookie(process.env.SECRET_JWT));
 // routes
 server.get("/", (req, res) => {
     res.send("Home page");
 });
+server.get("/logout", (req, res) => {
+    res.send("Home page");
+}); //define the home page and use the render method to render the index.ejs file
 
 server.post("/register", register); //reigister
 server.put("/register/:id", forgotPassword) //update  user password
 server.post("/login", login); //login
 server.get("/users", getUsers); //get all users
-server.delete("/users/:id", logout) //logout user it deletes the user
+// server.delete("/users/:id", logout) //logout user it deletes the user
 server.get("/users/:id", getUsers); //get userProfile
 server.delete("/users/:id", deleteUser) //delete user
 server.get("/cards", getCards); //get all cards
 server.get("/cards/:card_id", getCard); //get one card
 server.post("/card", createCard); //create a card
+server.put("/card/:card_id", updateCard); //update a card
+server.delete("/card/:card_id", deleteCard); //delete a card
 
 
 server.listen(PORT, () => { console.log(`Server listening on port ${PORT}`); });
