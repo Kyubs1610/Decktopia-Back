@@ -7,7 +7,7 @@ import { useState } from "react";
 // import vador from "../../Asset/card_and_pack/card-vador.jpg";
 // import optimus from '../../Asset/card_and_pack/card-optimus.jpg';
 
-import pickRandom from "./random";
+
 import cards from "./cards.json";
 
 
@@ -28,22 +28,45 @@ export default function CardFlip() {
         }
     }
     
-    const cardArray = pickRandom(cards);
-    console.log(cardArray)
-
-    const card1 = cardArray[0];
-
-    const card2 = cardArray[1];
-
-    const card3 = cardArray[2];
-
-    const card4 = cardArray[3];
-    console.log(card1 + " --------------" + card2 + " --------------" + card3 + " --------------" + card4);
-                
-    const togglePack = () => {
+    const togglePack = async () => {
         setPackOpened(!packOpened);
-    };
-            
+        if (packOpened) {
+          const cardContainer = document.getElementById("cards_reveal");
+          const response = await fetch("cards.json");
+          const data = await response.json();
+          const randomCards = shuffle(data.cards).slice(0, 3);
+          randomCards.forEach((card, index) => {
+            const cardDiv = document.createElement("div");
+            cardDiv.classList.add("card");
+            const cardImg = document.createElement("img");
+            cardImg.src = card.image;
+            cardDiv.appendChild(cardImg);
+            cardContainer.appendChild(cardDiv);
+          });
+        } else {
+          const cardContainer = document.getElementById("cards_reveal");
+          if (cardContainer) {
+            while (cardContainer.firstChild) {
+              cardContainer.removeChild(cardContainer.firstChild);
+            }
+          }
+        }
+      };
+    
+      // Helper function to shuffle an array
+      const shuffle = (array) => {
+        let currentIndex = array.length;
+        let temporaryValue, randomIndex;
+    
+        while (currentIndex !== 0) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+      };
+                    
     return (
         <>
             <div>
@@ -87,7 +110,8 @@ export default function CardFlip() {
                                 <li className="card-02 gold">
                                     <div className="carta" onClick={(e) => flip(e, 1)}>
                                         <div className="frente">
-                                            <img src={card2} />
+                                            <img src={cards} />
+                                            
                                         </div>
                                         
                                         <div className="tras">
@@ -99,7 +123,7 @@ export default function CardFlip() {
                                 <li className="card-03 silver">
                                     <div className="carta" onClick={(e) => flip(e, 2)}>
                                         <div className="frente">
-                                            <img src={card3} />
+                                            <img src={cards} />
                                         </div>
                   
                                         <div className="tras">
@@ -111,7 +135,7 @@ export default function CardFlip() {
                                 <li className="card-04 bronze">
                                     <div className="carta" onClick={(e) => flip(e, 3)}>
                                         <div className="frente">
-                                            <img src={card4} />
+                                            <img src={cards} />
                                         </div>
                  
                                         <div className="tras">
