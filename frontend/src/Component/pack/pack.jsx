@@ -3,14 +3,18 @@ import "./pack.css";
 import Header from "..//Header_and_footer/header";
 import { useState } from "react";
 
-// import kyubsninos from '../../Asset/card_and_pack/kyubsninos.png';
-// import vador from "../../Asset/card_and_pack/card-vador.jpg";
-// import optimus from '../../Asset/card_and_pack/card-optimus.jpg';
-
-
+import pickRandom from "./random";
 import cards from "./cards.json";
 
+var cardArray;
 
+var card1 = "";
+
+var card2 = "";
+
+var card3 = "";
+
+var card4 = "";
 
 export default function CardFlip() {
 
@@ -27,46 +31,38 @@ export default function CardFlip() {
             card.style.transform = "rotateY(180deg)";
         }
     }
+
+    // var cardArray;
     
-    const togglePack = async () => {
+    // var card1 = "";
+
+    // var card2 = "";
+
+    // var card3 = "";
+
+    // var card4 = "";
+    
+                
+    const togglePack = () => {
         setPackOpened(!packOpened);
-        if (packOpened) {
-          const cardContainer = document.getElementById("cards_reveal");
-          const response = await fetch("cards.json");
-          const data = await response.json();
-          const randomCards = shuffle(data.cards).slice(0, 3);
-          randomCards.forEach((card, index) => {
-            const cardDiv = document.createElement("div");
-            cardDiv.classList.add("card");
-            const cardImg = document.createElement("img");
-            cardImg.src = card.image;
-            cardDiv.appendChild(cardImg);
-            cardContainer.appendChild(cardDiv);
-          });
-        } else {
-          const cardContainer = document.getElementById("cards_reveal");
-          if (cardContainer) {
-            while (cardContainer.firstChild) {
-              cardContainer.removeChild(cardContainer.firstChild);
-            }
-          }
+
+        if(!packOpened){
+            cardArray = pickRandom(cards);
+            console.log(cardArray);
+
+            card1 = cardArray[0];
+
+            card2 = cardArray[1];
+
+            card3 = cardArray[2];
+
+            card4 = cardArray[3];
         }
-      };
-    
-      // Helper function to shuffle an array
-      const shuffle = (array) => {
-        let currentIndex = array.length;
-        let temporaryValue, randomIndex;
-    
-        while (currentIndex !== 0) {
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
-        }
-      };
-                    
+       
+    };
+
+    console.log(card1 + " / " + card2 + " / " + card3 + " / " + card4);
+            
     return (
         <>
             <div>
@@ -103,15 +99,14 @@ export default function CardFlip() {
                             <ul>
                                 <li className="card-01">
                                     <div className="carta" onClick={(e) => flip(e, 0)}>
-                                        <div className={`card charizard animated ${flippedCards.includes(0) ? "flipped" : ""}`}style={{width: "278px",height: "409px",marginTop: "0px",}}></div>
+                                        <div className={`card ${card1} animated ${flippedCards.includes(0) ? "flipped" : ""}`}style={{width: "278px",height: "409px",marginTop: "0px",}}></div>
                                     </div>
                                 </li>
 
                                 <li className="card-02 gold">
                                     <div className="carta" onClick={(e) => flip(e, 1)}>
                                         <div className="frente">
-                                            <img src={cards} />
-                                            
+                                            <div className={`card ${card2}`}></div>
                                         </div>
                                         
                                         <div className="tras">
@@ -123,7 +118,7 @@ export default function CardFlip() {
                                 <li className="card-03 silver">
                                     <div className="carta" onClick={(e) => flip(e, 2)}>
                                         <div className="frente">
-                                            <img src={cards} />
+                                            <div className={`card ${card3}`}></div>
                                         </div>
                   
                                         <div className="tras">
@@ -135,7 +130,7 @@ export default function CardFlip() {
                                 <li className="card-04 bronze">
                                     <div className="carta" onClick={(e) => flip(e, 3)}>
                                         <div className="frente">
-                                            <img src={cards} />
+                                            <div id="cardFour" className={`card ${card4}`}></div>
                                         </div>
                  
                                         <div className="tras">
@@ -143,8 +138,6 @@ export default function CardFlip() {
                                         </div>
                                     </div>
                                 </li>
-              
-
                             </ul>
                         </div>
                     </div>

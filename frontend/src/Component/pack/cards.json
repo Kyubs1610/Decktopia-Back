@@ -2,33 +2,33 @@
     "cards": [
         {
             "id": 0,
-            "name": "card-aang", 
-            "image" : "../../Asset/card_and_pack/card-aang.jpg"
+            "name": "aang", 
+            "image" : "../Asset/card_and_pack/card-aang"
         },
         {
             "id": 1,
-            "name": "card-mario",
-            "image": "../../Asset/card_and_pack/card-mario.jpg"
+            "name": "mario",
+            "image": "../Asset/card_and_pack/card-mario"
         },
         {
             "id": 2,
-            "name": "card-mickey",
-            "image": "../../Asset/card_and_pack/card-mario.jpg"
+            "name": "mickey",
+            "image": "../Asset/card_and_pack/card-mario"
         },
         {
             "id": 3,
-            "name": "card-optimus",
-            "image": "../../Asset/card_and_pack/card-optimus.jpg"
+            "name": "optimus",
+            "image": "../Asset/card_and_pack/card-optimus"
         },
         {
             "id": 4,
-            "name": "card-vador",
-            "image": "../../Asset/card_and_pack/card-vador.jpg"
+            "name": "vador",
+            "image": "../Asset/card_and_pack/card-vador"
         },
         {
             "id": 5,
-            "name": "card-zidane",
-            "image": "../../Asset/card_and_pack/card-zidane.jpg"
+            "name": "zidane",
+            "image": "../Asset/card_and_pack/card-zidane"
         }
     ]
 }

@@ -10,13 +10,12 @@ export default function Register()
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const navigateTo = useNavigate();
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // Make the API call to register the user
-    fetch('http://localhost:8000/register', {
+    fetch('http://51.38.32.47:8000/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -30,7 +29,7 @@ export default function Register()
     .then(response => {
         if (response.ok) {
         // Redirect the user to the profile page upon successful registration
-        navigateTo.push('/profile');
+        window.location.href = "/profile";
       } else {
         // Handle error response
         setErrorMessage('Login failed.');
