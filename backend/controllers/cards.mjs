@@ -49,7 +49,7 @@ export const updateCard = async (req, res) =>{
 export const deleteCard = async (req, res) =>{
     try {
         const { card_id } = req.params;
-        const deleteCard = await Pool.query("DELETE FROM cards WHERE card_id = $1", [card_id]);
+    await Pool.query("DELETE FROM cards WHERE card_id = $1", [card_id]);
         res.json("Card was deleted");
     } catch (error) {
         console.error(error.message);

@@ -26,11 +26,11 @@ server.get("/logout", (req, res) => {
     res.send("Home page");
 }); //define the home page and use the render method to render the index.ejs file
 
+
 server.post("/register", register); //reigister
 server.put("/register/:id", forgotPassword) //update  user password
 server.post("/login", login); //login
 server.get("/users", getUsers); //get all users
-// server.delete("/users/:id", logout) //logout user it deletes the user
 server.get("/users/:id", getUsers); //get userProfile
 server.delete("/users/:id", deleteUser) //delete user
 server.get("/cards", getCards); //get all cards

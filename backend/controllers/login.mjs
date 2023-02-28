@@ -4,6 +4,8 @@ import { promisify } from "util";
 import JWT from "jsonwebtoken";
 const sign = promisify(JWT.sign);
 
+
+
 //login
 export const login = async (req, res) => {
   const { email, password } = req.body;
@@ -30,10 +32,10 @@ export const login = async (req, res) => {
         expiresIn: "1h",
       });
       console.log(token);
-      // return res.send({ token });  => it works when asking to response send the token, but "cannot generate" when sending to the cookie
       res.cookie("access_token", token, {
         httpOnly: true,
       });
+      return res.send({ token });
     } catch (err) {
       console.log(err.message);
       return res.status(500).send({ error: "Cannot generate token" });
@@ -43,11 +45,12 @@ export const login = async (req, res) => {
   }
 };
 
+
 // get one user
 export const oneUser = async (req, res) => {
   const { id } = req.params
   try {
-    const user = await Pool.query("SELECT * FROM users WHERE id = $1", 
+  await Pool.query("SELECT * FROM users WHERE id = $1", 
     [id])
   } catch (error) {
     console.error(error.message)
