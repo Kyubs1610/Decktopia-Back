@@ -20,5 +20,5 @@ export default function pickRandom (cards){
         indexCardFour = generateRandomInteger(cards.cards.length);
     }
 
-    return [cards.cards[indexCardOne].name , cards.cards[indexCardTwo].name , cards.cards[indexCardThree].name , cards.cards[indexCardFour].name];
+    return [cards.cards[indexCardOne] , cards.cards[indexCardTwo] , cards.cards[indexCardThree] , cards.cards[indexCardFour]];
 };

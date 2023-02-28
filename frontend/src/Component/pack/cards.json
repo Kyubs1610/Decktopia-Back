@@ -3,32 +3,92 @@
         {
             "id": 0,
             "name": "aang", 
-            "url" : "../Asset/card_and_pack/card-aang"
+            "url" : "../../Asset/card_and_pack/card-aang.jpg"
         },
         {
             "id": 1,
             "name": "mario",
-            "url": "../Asset/card_and_pack/card-mario"
+            "url": "../../Asset/card_and_pack/card-mario.jpg"
         },
         {
             "id": 2,
             "name": "mickey",
-            "url": "../Asset/card_and_pack/card-mario"
+            "url": "../../Asset/card_and_pack/card-mario.jpg"
         },
         {
             "id": 3,
             "name": "optimus",
-            "url": "../Asset/card_and_pack/card-optimus"
+            "url": "../../Asset/card_and_pack/card-optimus.jpg"
         },
         {
             "id": 4,
             "name": "vador",
-            "url": "../Asset/card_and_pack/card-vador"
+            "url": "../../Asset/card_and_pack/card-vador.jpg"
         },
         {
             "id": 5,
             "name": "zidane",
-            "url": "../Asset/card_and_pack/card-zidane"
+            "url": "../../Asset/card_and_pack/card-zidane.jpg"
+        },
+        {
+            "id": 6,
+            "name": "shibs",
+            "url": "../../Asset/card_and_pack/card-shibs.png"
+        },
+        {
+            "id": 7,
+            "name": "kyubsninos",
+            "url": "../../Asset/card_and_pack/card-kyubsninos.png"
+        },
+        {
+            "id": 8,
+            "name": "totoro",
+            "url": "../../Asset/card_and_pack/card-totoro.jpg"
+        },
+        {
+            "id": 9,
+            "name": "pikachu",
+            "url": "../../Asset/card_and_pack/card-pikachu.jpg"
+        },
+        {
+            "id": 10,
+            "name": "yoda",
+            "url": "../../Asset/card_and_pack/card-yoda.jpg"
+        },
+        {
+            "id": 11,
+            "name": "goku",
+            "url": "../../Asset/card_and_pack/card-goku.jpg"
+        },
+        {
+            "id": 12,
+            "name": "sonic",
+            "url": "../../Asset/card_and_pack/card-Sonic.png"
+        },
+        {
+            "id": 13,
+            "name": "fox",
+            "url": "../../Asset/card_and_pack/card-Fox.png"
+        },
+        {
+            "id": 14,
+            "name": "kratos",
+            "url": "../../Asset/card_and_pack/card-Kratos.png"
+        },
+        {
+            "id": 15,
+            "name": "lara",
+            "url": "../../Asset/card_and_pack/card-Lara.png"
+        },
+        {
+            "id": 16,
+            "name": "manga",
+            "url": "../../Asset/card_and_pack/card-Manga.png"
+        },
+        {
+            "id": 17,
+            "name": "tlou",
+            "url": "../../Asset/card_and_pack/card-TLOU_2.png"
         }
     ]
 }

@@ -441,6 +441,18 @@
     --optimusfront: url("../..//..//src/Asset/card_and_pack/card-optimus.jpg");
     --vadorfront: url("../..//..//src/Asset/card_and_pack/card-vador.jpg");
     --zidanefront: url("../..//..//src/Asset/card_and_pack/card-zidane.jpg");
+    --shibsfront: url("../..//..//src/Asset/card_and_pack/card-shibs.png");
+    --kyubsninosfront: url("../..//..//src/Asset/card_and_pack/card-kyubsninos.png");
+    --pikachufront: url("../..//..//src/Asset/card_and_pack/card-pikachu.jpg");
+    --totorofront: url("../..//..//src/Asset/card_and_pack/card-totoro.jpg");
+    --gokufront: url("../..//..//src/Asset/card_and_pack/card-goku.jpg");
+    --yodafront: url("../..//..//src/Asset/card_and_pack/card-yoda.jpg");
+    --foxfront: url("../..//..//src/Asset/card_and_pack/card-Fox.png");
+    --larafront: url("../..//..//src/Asset/card_and_pack/card-Lara.png");
+    --kratosfront: url("../..//..//src/Asset/card_and_pack/card-Kratos.png");
+    --mangafront: url("../..//..//src/Asset/card_and_pack/card-Manga.png");
+    --sonicfront: url("../..//..//src/Asset/card_and_pack/card-Sonic.png");
+    --tloufront: url("../..//..//src/Asset/card_and_pack/card-TLOU_2.png");
   }
   
   .card {
@@ -507,6 +519,47 @@
 .zidane {
     --front: var(--zidanefront);
   }
+.shibs {
+    --front: var(--shibsfront);
+}
+.kyubsninos {
+    --front: var(--kyubsninosfront);
+}
+.goku {
+    --front: var(--gokufront);
+}
+.pikachu {
+    --front: var(--pikachufront);
+}
+.totoro {
+    --front: var(--totorofront);
+}
+.yoda {
+    --front: var(--yodafront);
+}
+
+.fox {
+    --front: var(--foxfront);
+}
+.kratos {
+    --front: var(--kratosfront);
+}
+.lara {
+    --front: var(--larafront);
+}
+.manga {
+    --front: var(--mangafront);
+}
+.sonic {
+    --front: var(--sonicfront);
+}
+.sonic:hover {
+    --front: var(--sonicfront);
+    width: 500px;
+}
+.tlou {
+    --front: var(--tloufront);
+}
 
   .card.eevee {
     --color1: #ec9bb6;
