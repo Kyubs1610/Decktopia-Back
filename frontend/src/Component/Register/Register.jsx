@@ -16,7 +16,7 @@ export default function Register()
     event.preventDefault();
 
     // Make the API call to register the user
-    fetch('http://localhost:8000/register', {
+    fetch('http://51.38.32.47:8000/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
