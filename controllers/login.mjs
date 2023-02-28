@@ -1,29 +1,47 @@
 import { Pool } from "../config/dbPool.mjs";
+import bcrypt from "bcrypt";
+import { promisify } from "util";
+import JWT from "jsonwebtoken";
+const sign = promisify(JWT.sign);
 
 //login
 export const login = async (req, res) => {
-    const { email, password } = req.body;
-    if (!email || !password) {
-      return res.status(400).send({ message: "Please fill all the fields" });
-    }
-  
+  const { email, password } = req.body;
+
+  if (!email || !password)
+    return res.status(400).send({ error: "invalid request" });
+
+  const query = await Pool.query(
+    "SELECT username, email, password FROM users WHERE email = $1",
+    [email]
+  );
+
+  if (query.rowCount === 0) {
+    return res.status(404).send({ error: "user do not exists" });
+  }
+
+  const result = query.rows[0];
+  const match = await bcrypt.compare(password, result.password);
+
+  if (match) {
     try {
-      const result = await Pool.query("SELECT * FROM users WHERE email = $1", [email]);
-      if (result.rows.length === 0) {
-        return res.status(401).send({ message: "Email or password is incorrect" });
-      }
-      res.status(200).send({ message: "User logged in successfully" });
-    } catch (error) {
-      console.error(error.message);
-      return res.status(500).send({ message: "An error occurred while trying to log in" });
+      const token = await sign({ email }, process.env.SECRET_JWT, {
+        algorithm: "HS512",
+        expiresIn: "1h",
+      });
+      console.log(token);
+      // return res.send({ token });  => it works when asking to response send the token, but "cannot generate" when sending to the cookie
+      res.cookie("access_token", token, {
+        httpOnly: true,
+      });
+    } catch (err) {
+      console.log(err.message);
+      return res.status(500).send({ error: "Cannot generate token" });
     }
-  };
-        // const validPassword = await bcrypt.compare(password, user.rows[0].password);
-        // if (!validPassword) {
-        //     return res.status(401).send({ message: "Email or password is incorrect" });
-        // }
-        // const token = jwtGenerator(user.rows[0].id);
-        // res.json({ token });
+  } else {
+    return res.status(403).send({ error: "wrong password" });
+  }
+};
 
 // get one user
 export const oneUser = async (req, res) => {

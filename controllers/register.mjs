@@ -1,4 +1,8 @@
 import { Pool } from "../config/dbPool.mjs";
+import bcrypt from "bcrypt";
+
+
+
 
 // register
 export const register = async (req, res) => {
@@ -9,10 +13,10 @@ export const register = async (req, res) => {
     }
 
     try {
-        // const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
         await Pool.query(
             "INSERT INTO users (  username, email, password) VALUES ($1, $2, $3) RETURNING *",
-            [  username, email, password]
+            [  username, email, hashedPassword]
         );
         res.status(200).send({ message: "User created successfully"});
     } catch (error) {
@@ -23,7 +27,7 @@ export const register = async (req, res) => {
 export const deleteUser = async (req, res) => {
     try {
         const { id } = req.params;
-        const deleteUser = await Pool.query("DELETE FROM users WHERE user_id = $1", [id]);
+    await Pool.query("DELETE FROM users WHERE user_id = $1", [id]);
         res.json("User was deleted!");
     } catch (error) {
         console.error(error.message);
@@ -35,7 +39,7 @@ export const forgotPassword = async ( req, res ) =>{
     try {
         const { id } = req.params
         const { password } = req.body
-        const update = await Pool.query(
+    await Pool.query(
         "UPDATE users SET password = $1 WHERE user_id = $2",
         [password, id]
         )

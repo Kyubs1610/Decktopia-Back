@@ -1,10 +1,11 @@
 import Express from "express";
 import bodyParser from "body-parser";
+import cookie from "cookie-parser";
 import * as dotenv from "dotenv";
 import { dbConnect } from "./config/dbConnect.mjs";
 import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
 import { login, getUsers } from "./controllers/login.mjs";
-import { getCards, getCard, createCard } from "./controllers/cards.mjs";
+import { getCards, getCard, createCard, updateCard, deleteCard } from "./controllers/cards.mjs";
 
 // connection server
 dotenv.config();
@@ -15,6 +16,8 @@ dbConnect()
 // body parser
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
+// cookie parser
+server.use(cookie(process.env.SECRET_JWT));
 // routes
 server.get("/", (req, res) => {
     res.send("Home page");
@@ -33,6 +36,8 @@ server.delete("/users/:id", deleteUser) //delete user
 server.get("/cards", getCards); //get all cards
 server.get("/cards/:card_id", getCard); //get one card
 server.post("/card", createCard); //create a card
+server.put("/card/:card_id", updateCard); //update a card
+server.delete("/card/:card_id", deleteCard); //delete a card
 
 
 server.listen(PORT, () => { console.log(`Server listening on port ${PORT}`); });

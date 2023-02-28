@@ -23,12 +23,36 @@ export const getCard = async (req, res) =>{
 
 //create a card
 export const createCard = async (req, res) =>{
-    const { user_id } = 1; //req.user based on the user that is logged in
     try {
-        const { card_name, card_value, card_exp  } = req.body;
-        const newCard = await Pool.query("INSERT INTO cards (card_name, card_value, card_exp) VALUES ($1, $2, $3) RETURNING *",
-        [card_name, card_value, card_exp]);
+        const { user_id } = 1; //req.user based on the user that is logged in
+        const { card_name, card_value, card_exp} = req.body;
+        const newCard = await Pool.query(
+        "INSERT INTO cards (card_name, card_value, card_exp, user_id ) VALUES ($1, $2, $3, $4) RETURNING *",
+        [card_name, card_value, card_exp, user_id]);
         res.json(newCard.rows[0]);
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+export const updateCard = async (req, res) =>{
+    try {
+        const { card_id } = req.params;
+        const { card_name, card_value, card_exp} = req.body;
+        await Pool.query(
+        "UPDATE cards SET card_name = $1, card_value = $2, card_exp = $3 WHERE card_id = $4",
+        [card_name, card_value, card_exp, card_id]);
+        res.json("Card was updated!");
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+export const deleteCard = async (req, res) =>{
+    try {
+        const { card_id } = req.params;
+        await Pool.query("DELETE FROM cards WHERE card_id = $1", [card_id]);
+        res.json("Card was deleted!");
     } catch (error) {
         console.error(error.message);
     }
