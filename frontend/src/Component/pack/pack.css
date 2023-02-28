@@ -434,18 +434,13 @@
     --color1: rgb(0, 231, 255);
     --color2: rgb(255, 0, 231);
     --back: url("../..//..//src/Asset/card_and_pack/back.png");
-    --charizard1: #fac;
-    --charizard2: #ddccaa;
-    --charizardfront: url("../..//..//src/Asset/card_and_pack/shibs.png");
-    --pika1: #54a29e;
-    --pika2: #a79d66;
-    --pikafront: url(https://assets.codepen.io/13471/pikachu-gx.webp);
-    --eevee1: #efb2fb;
-    --eevee2: #acc6f8;
-    --eeveefront: url(https://assets.codepen.io/13471/eevee-gx.webp);
-    --mewtwo1: #efb2fb;
-    --mewtwo2: #acc6f8;
-    --mewtwofront: url(https://assets.codepen.io/13471/mewtwo-gx.webp);
+
+    --aangfront: url("../..//..//src/Asset/card_and_pack/card-aang.jpg");
+    --mariofront: url("../..//..//src/Asset/card_and_pack/card-mario.jpg");
+    --mickeyfront: url("../..//..//src/Asset/card_and_pack/card-mickey.jpg");
+    --optimusfront: url("../..//..//src/Asset/card_and_pack/card-optimus.jpg");
+    --vadorfront: url("../..//..//src/Asset/card_and_pack/card-vador.jpg");
+    --zidanefront: url("../..//..//src/Asset/card_and_pack/card-zidane.jpg");
   }
   
   .card {
@@ -492,21 +487,27 @@
       0 55px 35px -20px rgba(0, 0, 0, 0.5);
   }
   
-  .card.charizard {
-    --color1: var(--charizard1);
-    --color2: var(--charizard2);
-    --front: var(--charizardfront);
+
+
+.aang {
+    --front: var(--aangfront);
   }
-  .card.pika {
-    --color1: var(--pika1);
-    --color2: var(--pika2);
-    --front: var(--pikafront);
+.mario {
+    --front: var(--mariofront);
   }
-  .card.mewtwo {
-    --color1: var(--mewtwo1);
-    --color2: var(--mewtwo2);
-    --front: var(--mewtwofront);
+.mickey {
+    --front: var(--mickeyfront);
   }
+.optimus {
+    --front: var(--optimusfront);
+  }
+.vador {
+    --front: var(--vadorfront);
+  }
+.zidane {
+    --front: var(--zidanefront);
+  }
+
   .card.eevee {
     --color1: #ec9bb6;
     --color2: #ccac6f;
@@ -530,7 +531,7 @@
     transition: all 0.33s ease;
   }
   
-  .card:before {
+  .animated:before {
     background-position: 50% 50%;
     background-size: 300% 300%;
     background-image: linear-gradient(
@@ -547,7 +548,7 @@
     z-index: 1;
   }
   
-  .card:after {
+  .animated:after {
     opacity: 1;
     background-image: url("https://assets.codepen.io/13471/sparkles.gif"),
       url(https://assets.codepen.io/13471/holo.png),
@@ -595,8 +596,22 @@
     background-position: 50% 50%;
     background-size: 250% 250%;
     opacity: 0.88;
-    filter: brightness(0.66) contrast(1.33);
+    filter: brightness(0.4) contrast(1);
     transition: none;
+  }
+
+  .animated:hover:before {
+      animation: none;
+      background-image: linear-gradient(110deg,
+              transparent 25%,
+              var(--color1) 48%,
+              var(--color2) 52%,
+              transparent 75%);
+      background-position: 50% 50%;
+      background-size: 250% 250%;
+      opacity: 0.88;
+      filter: brightness(0.66) contrast(1.33);
+      transition: none;
   }
   
   .card.active:before,
