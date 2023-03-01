@@ -1,49 +1,46 @@
 import { Pool } from "../config/dbPool.mjs";
 import bcrypt from "bcrypt";
-import { promisify } from "util";
-import JWT from "jsonwebtoken";
-const sign = promisify(JWT.sign);
+// import { promisify } from "util";
+// import JWT from "jsonwebtoken";
+// const sign = promisify(JWT.sign);
 
 
 
 //login
 export const login = async (req, res) => {
-  const { email, password } = req.body;
-
-  if (!email || !password)
-    return res.status(400).send({ error: "invalid request" });
-
-  const query = await Pool.query(
-    "SELECT username, email, password FROM users WHERE email = $1",
-    [email]
-  );
-
-  if (query.rowCount === 0) {
-    return res.status(404).send({ error: "user do not exists" });
+      const { email, password } = req.body;
+ 
+  // Check if email and password are present
+  if (!email || !password) {
+    return res.status(400).send({ error: "Email and password are required" });
   }
-
-  const result = query.rows[0];
-  const match = await bcrypt.compare(password, result.password);
-
-  if (match) {
-    try {
-      const token = await sign({ email }, process.env.SECRET_JWT, {
-        algorithm: "HS512",
-        expiresIn: "1h",
-      });
-      console.log(token);
-      res.cookie("access_token", token, {
-        httpOnly: true,
-      });
-      return res.send({ token });
-    } catch (err) {
-      console.log(err.message);
-      return res.status(500).send({ error: "Cannot generate token" });
+  try {
+    // Query the database for a user with the given email
+    const query = await Pool.query(
+      "SELECT username, email, password FROM users WHERE email = $1",
+      [email]
+    );
+    // If no user is found, return 404 error
+    if (query.rowCount === 0) {
+      return res.status(404).send({ error: "User not found" });
     }
-  } else {
-    return res.status(403).send({ error: "wrong password" });
+    // If a user is found, compare the password hash with the given password
+    const result = query.rows[0];
+    const match = await bcrypt.compare(password, result.password);
+
+    // If the passwords don't match, return 401 error
+    if (!match) {
+      return res.status(401).send({ error: "Incorrect password" });
+    }
+    // Send a success response
+    res.status(200).send({ message: "Login successful" });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send({ error: error.message });
   }
 };
+
+  
 
 
 // get one user

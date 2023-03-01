@@ -1,4 +1,5 @@
 import { Pool } from "../config/dbPool.mjs";
+import bcrypt from "bcrypt";
 
 
 
@@ -9,12 +10,12 @@ export const register = async (req, res) => {
     if ( !username || !email || !password ) {
         return res.status(400).send({ message: "Please fill all the fields" });
     }
-
     try {
-        // const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         await Pool.query(
             "INSERT INTO users (  username, email, password) VALUES ($1, $2, $3) RETURNING *",
-            [  username, email, password]
+            [  username, email, hashedPassword]
         );
         res.status(200).send({ message: "User created successfully"});
     } catch (error) {
