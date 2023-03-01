@@ -33,3 +33,25 @@ export const createCard = async (req, res) =>{
         console.error(error.message);
     }
 }
+// update a card
+export const updateCard = async (req, res) =>{
+    try {
+        const { card_id } = req.params;
+        const { card_name, card_value, card_exp } = req.body;
+        const updateCard = await Pool.query("UPDATE cards SET card_name = $1, card_value = $2, card_exp = $3 WHERE card_id = $4",
+        [card_name, card_value, card_exp, card_id]);
+        res.json("Card was updated");
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+// delete a card
+export const deleteCard = async (req, res) =>{
+    try {
+        const { card_id } = req.params;
+    await Pool.query("DELETE FROM cards WHERE card_id = $1", [card_id]);
+        res.json("Card was deleted");
+    } catch (error) {
+        console.error(error.message);
+    }
+}
