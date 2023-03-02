@@ -6,6 +6,11 @@ export default function dispplayCards (cards) {
 
         const cardTitle = document.createElement("h2");
         cardTitle.textContent = card.name;
+        if(!card.possesed){
+            cardDiv.classList.add("unpossesed");
+        }else{
+            cardDiv.classList.add("possesed");
+        }
 
         cardDiv.appendChild(cardTitle);
         cardDiv.classList.add(card.name);

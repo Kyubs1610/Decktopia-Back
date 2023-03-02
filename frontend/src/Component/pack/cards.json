@@ -3,122 +3,146 @@
         {
             "id": 0,
             "name": "aang", 
-            "url" : "../..//..//src/Asset/card_and_pack/card-aang.jpg"
+            "url" : "../..//..//src/Asset/card_and_pack/card-aang.jpg",
+            "possesed" : false
         },
         {
             "id": 1,
             "name": "mario",
-            "url": "../../Asset/card_and_pack/card-mario.jpg"
+            "url": "../../Asset/card_and_pack/card-mario.jpg",
+            "possesed": true
         },
         {
             "id": 2,
             "name": "mickey",
-            "url": "../../Asset/card_and_pack/card-mario.jpg"
+            "url": "../../Asset/card_and_pack/card-mario.jpg",
+            "possesed": false
         },
         {
             "id": 3,
             "name": "optimus",
-            "url": "../../Asset/card_and_pack/card-optimus.jpg"
+            "url": "../../Asset/card_and_pack/card-optimus.jpg",
+            "possesed": true
         },
         {
             "id": 4,
             "name": "vador",
-            "url": "../../Asset/card_and_pack/card-vador.jpg"
+            "url": "../../Asset/card_and_pack/card-vador.jpg",
+            "possesed": false
         },
         {
             "id": 5,
             "name": "zidane",
-            "url": "../../Asset/card_and_pack/card-zidane.jpg"
+            "url": "../../Asset/card_and_pack/card-zidane.jpg",
+            "possesed": false
         },
         {
             "id": 6,
             "name": "shibs",
-            "url": "../../Asset/card_and_pack/card-shibs.png"
+            "url": "../../Asset/card_and_pack/card-shibs.png",
+            "possesed": true
         },
         {
             "id": 7,
             "name": "kyubsninos",
-            "url": "../../Asset/card_and_pack/card-kyubsninos.png"
+            "url": "../../Asset/card_and_pack/card-kyubsninos.png",
+            "possesed": false
         },
         {
             "id": 8,
             "name": "totoro",
-            "url": "../../Asset/card_and_pack/card-totoro.jpg"
+            "url": "../../Asset/card_and_pack/card-totoro.jpg",
+            "possesed": false
         },
         {
             "id": 9,
             "name": "pikachu",
-            "url": "../../Asset/card_and_pack/card-pikachu.jpg"
+            "url": "../../Asset/card_and_pack/card-pikachu.jpg",
+            "possesed": false
         },
         {
             "id": 10,
             "name": "yoda",
-            "url": "../../Asset/card_and_pack/card-yoda.jpg"
+            "url": "../../Asset/card_and_pack/card-yoda.jpg",
+            "possesed": false
         },
         {
             "id": 11,
             "name": "goku",
-            "url": "../../Asset/card_and_pack/card-goku.jpg"
+            "url": "../../Asset/card_and_pack/card-goku.jpg",
+            "possesed": true
         },
         {
             "id": 12,
             "name": "sonic",
-            "url": "../../Asset/card_and_pack/card-Sonic.png"
+            "url": "../../Asset/card_and_pack/card-Sonic.png",
+            "possesed": true
         },
         {
             "id": 13,
             "name": "fox",
-            "url": "../../Asset/card_and_pack/card-Fox.png"
+            "url": "../../Asset/card_and_pack/card-Fox.png",
+            "possesed": false
         },
         {
             "id": 14,
             "name": "kratos",
-            "url": "../../Asset/card_and_pack/card-Kratos.png"
+            "url": "../../Asset/card_and_pack/card-Kratos.png",
+            "possesed": true
         },
         {
             "id": 15,
             "name": "lara",
-            "url": "../../Asset/card_and_pack/card-Lara.png"
+            "url": "../../Asset/card_and_pack/card-Lara.png",
+            "possesed": false
         },
         {
             "id": 16,
             "name": "manga",
-            "url": "../../Asset/card_and_pack/card-Manga.png"
+            "url": "../../Asset/card_and_pack/card-Manga.png",
+            "possesed": false
         },
         {
             "id": 17,
             "name": "tlou",
-            "url": "../../Asset/card_and_pack/card-TLOU_2.png"
+            "url": "../../Asset/card_and_pack/card-TLOU_2.png",
+            "possesed": false
         },
         {
             "id": 18,
             "name": "cat",
-            "url": "../../Asset/card_and_pack/card-cat.jpeg"
+            "url": "../../Asset/card_and_pack/card-cat.jpeg",
+            "possesed": false
         },
         {
             "id": 19,
             "name": "coldfire",
-            "url": "../../Asset/card_and_pack/card-coldfire.jpeg"
+            "url": "../../Asset/card_and_pack/card-coldfire.jpeg",
+            "possesed": true
         },
         {
             "id": 20,
             "name": "robotcodes",
-            "url": "../../Asset/card_and_pack/card-robotcodes.jpeg"
+            "url": "../../Asset/card_and_pack/card-robotcodes.jpeg",
+            "possesed": false
         },
         {
             "id": 21,
             "name": "robotgangster",
-            "url": "../../Asset/card_and_pack/card-robotgangster.png"
+            "url": "../../Asset/card_and_pack/card-robotgangster.png",
+            "possesed": true
         },
         {
             "id": 22,
             "name": "robotgun",
-            "url": "../../Asset/card_and_pack/card-robotgun.jpeg"
+            "url": "../../Asset/card_and_pack/card-robotgun.jpeg",
+            "possesed": false
         },
         {
             "id": 23,
             "name": "superrobot",
-            "url": "../../Asset/card_and_pack/card-superrobot.jpeg"
+            "url": "../../Asset/card_and_pack/card-superrobot.jpeg",
+            "possesed": true
         }
     ]
 }
