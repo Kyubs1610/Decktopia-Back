@@ -1,5 +1,13 @@
 import { Pool } from "../config/dbPool.mjs";
 
+export const initAllCards = () => {
+  try {
+    console.log("Hello!")
+  } catch {
+    console.log("Error while cards init" + error.message);
+  }
+}
+
 // cards
 export const getCards = async (req, res) =>{
     try {

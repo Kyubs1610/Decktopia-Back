@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 import { dbConnect } from "./config/dbConnect.mjs";
 import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
 import { login, getUsers } from "./controllers/login.mjs";
-import { getCards, getCard, createCard, updateCard, deleteCard } from "./controllers/cards.mjs";
+import { getCards, getCard, createCard, updateCard, deleteCard, initAllCards } from "./controllers/cards.mjs";
 
 // connection server
 dotenv.config();
@@ -28,6 +28,7 @@ server.get("/logout", (req, res) => {
     res.send("Home page");
 }); //define the home page and use the render method to render the index.ejs file
 
+initAllCards();
 
 server.post("/register", register); //reigister
 server.put("/register/:id", forgotPassword) //update  user password
