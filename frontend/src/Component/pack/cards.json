@@ -3,7 +3,7 @@
         {
             "id": 0,
             "name": "aang", 
-            "url" : "../../Asset/card_and_pack/card-aang.jpg"
+            "url" : "../..//..//src/Asset/card_and_pack/card-aang.jpg"
         },
         {
             "id": 1,
@@ -89,6 +89,36 @@
             "id": 17,
             "name": "tlou",
             "url": "../../Asset/card_and_pack/card-TLOU_2.png"
+        },
+        {
+            "id": 18,
+            "name": "cat",
+            "url": "../../Asset/card_and_pack/card-cat.jpeg"
+        },
+        {
+            "id": 19,
+            "name": "coldfire",
+            "url": "../../Asset/card_and_pack/card-coldfire.jpeg"
+        },
+        {
+            "id": 20,
+            "name": "robotcodes",
+            "url": "../../Asset/card_and_pack/card-robotcodes.jpeg"
+        },
+        {
+            "id": 21,
+            "name": "robotgangster",
+            "url": "../../Asset/card_and_pack/card-robotgangster.png"
+        },
+        {
+            "id": 22,
+            "name": "robotgun",
+            "url": "../../Asset/card_and_pack/card-robotgun.jpeg"
+        },
+        {
+            "id": 23,
+            "name": "superrobot",
+            "url": "../../Asset/card_and_pack/card-superrobot.jpeg"
         }
     ]
 }

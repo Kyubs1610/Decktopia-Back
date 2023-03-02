@@ -453,6 +453,13 @@
     --mangafront: url("../..//..//src/Asset/card_and_pack/card-Manga.png");
     --sonicfront: url("../..//..//src/Asset/card_and_pack/card-Sonic.png");
     --tloufront: url("../..//..//src/Asset/card_and_pack/card-TLOU_2.png");
+
+    --catfront: url("../..//..//src/Asset/card_and_pack/card-cat.jpeg");
+    --coldfirefront: url("../..//..//src/Asset/card_and_pack/card-coldfire.jpeg");
+    --robotcodesfront: url("../..//..//src/Asset/card_and_pack/card-robotcodes.jpeg");
+    --robotgangsterfront: url("../..//..//src/Asset/card_and_pack/card-robotgangster.png");
+    --robotgunfront: url("../..//..//src/Asset/card_and_pack/card-robotgun.jpeg");
+    --superrobotfront: url("../..//..//src/Asset/card_and_pack/card-superrobot.jpeg");
   }
   
   .card {
@@ -553,12 +560,28 @@
 .sonic {
     --front: var(--sonicfront);
 }
-.sonic:hover {
-    --front: var(--sonicfront);
-    width: 500px;
-}
 .tlou {
     --front: var(--tloufront);
+}
+
+.cat {
+    --front: var(--catfront);
+}
+.coldfire {
+    --front: var(--coldfirefront);
+}
+.robotcodes {
+    --front: var(--robotcodesfront);
+}
+.robotgangster {
+    --front: var(--robotgangsterfront);
+}
+.robotgun {
+    --front: var(--robotgunfront);
+    width: 500px;
+}
+.superrobot {
+    --front: var(--superrobotfront);
 }
 
   .card.eevee {
