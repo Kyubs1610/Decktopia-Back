@@ -16,7 +16,7 @@ function Collection() {
 
             <div id='collection'>
                 <h1>collection</h1>
-                <button onClick={display}></button>
+                <button onClick={display}>show</button>
                 <div id='cardsCollection'>
                 </div>
             </div>
