@@ -8,13 +8,7 @@ CREATE TABLE cards (cards_id SERIAL PRIMARY KEY,
  user_id INTEGER REFERENCES users(id),
  card_name VARCHAR(255),
  card_value VARCHAR(255),
- card_exp VARCHAR(255));
- ALTER TABLE cards 
- DROP COLUMN user_id;
- ALTER TABLE cards
- DROP COLUMN card_exp;
-ALTER TABLE cards
-ADD COLUMN card_path VARCHAR('255');
+ card_path VARCHAR(255));
 CREATE TABLE collection_per_user (collection_id SERIAL PRIMARY KEY,
 user_id INTEGER REFERENCES users(id),
 collection_name VARCHAR(255),
