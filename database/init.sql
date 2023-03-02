@@ -14,7 +14,7 @@ CREATE TABLE cards (cards_id SERIAL PRIMARY KEY,
  ALTER TABLE cards
  DROP COLUMN card_exp;
 ALTER TABLE cards
-ADD COLUMN card_path VARCHAR(255);
+ADD COLUMN card_path VARCHAR('255');
 CREATE TABLE collection_per_user (collection_id SERIAL PRIMARY KEY,
 user_id INTEGER REFERENCES users(id),
 collection_name VARCHAR(255),
