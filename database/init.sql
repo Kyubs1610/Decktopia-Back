@@ -13,7 +13,7 @@ CREATE TABLE cards (
     card_value VARCHAR(255),
     card_exp VARCHAR(255));
     ALTER TABLE cards
-    DROP COLUMN cards_id;
+    DROP COLUMN user_id;
 
 CREATE TABLE collection_per_user (
     collection_id SERIAL PRIMARY KEY,
