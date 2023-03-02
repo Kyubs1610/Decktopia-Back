@@ -1,6 +1,7 @@
 import Express from "express";
 import bodyParser from "body-parser";
 import cookie from "cookie-parser";
+import cors from "cors";
 import * as dotenv from "dotenv";
 import { dbConnect } from "./config/dbConnect.mjs";
 import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
@@ -14,6 +15,7 @@ const PORT = process.env.PORT || 3000;
 // connection database
 dbConnect()
 // body parser
+server.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 // cookie parser
