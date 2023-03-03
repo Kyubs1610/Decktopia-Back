@@ -19,7 +19,7 @@ server.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 // cookie parser
-server.use(cookie(process.env.SECRET_JWT));
+server.use(cookie(process.env.JWT));
 // routes
 server.get("/", (req, res) => {
     res.send("Home page");
