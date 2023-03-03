@@ -12,7 +12,7 @@ export const jwtAuthentification = async (req, res, next) => {
       return res.status(401).send({ error: 'Unauthorized first' });
     }
 
-    JWT.verify(token, process.env.SECRET_JWT, (err, decoded) => {
+    JWT.verify(token, process.env.JWT, (err, decoded) => {
 
       if (err) {
         return res.status(401).send({ error: 'Unauthorized' });
