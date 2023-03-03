@@ -1,0 +1,425 @@
+#collection{
+    margin: auto;
+    position: relative;
+    width: 85%;
+    height: 80vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    text-align: center;
+    
+}
+
+#collection button{
+    font-family: 'Megrim', cursive;
+    font-size: xx-large;
+    padding: 2%;
+    margin: 50px 0;
+    -webkit-animation: flicker-in-1 2s linear both;
+        animation: flicker-in-1 2s linear both;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Megrim', cursive;
+}
+
+h2{
+    letter-spacing: 2px;
+    background-color: rgba(43,41,69,0.5);
+    padding: 4%;
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+    color: #fff;
+    border: solid 1px #fff;
+    border-radius: 8px;
+    font-family: 'Megrim', cursive;
+}
+
+#cardsCollection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#cardsCollection div{
+    max-width: 472px;
+    width: 18%;
+    min-width: 200px;
+    height: 300px;
+    margin: 12px 0px;
+    border: solid 2px #fff;
+    text-align: center;
+    border-radius: 8px;
+    transition: 2s ease;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.unpossesed{
+    filter: grayscale(100) ;
+}
+
+.aang{
+    background-image: url(../../Asset/card_and_pack/card-aang.jpg);
+}
+.cat {
+    background-image: url(../../Asset/card_and_pack/card-cat.jpeg);
+}
+.coldfire {
+    background-image: url(../../Asset/card_and_pack/card-coldfire.jpeg);
+}
+.fox {
+    background-image: url(../../Asset/card_and_pack/card-Fox.png);
+}
+.goku {
+    background-image: url(../../Asset/card_and_pack/card-goku.jpg);
+}
+.kratos {
+    background-image: url(../../Asset/card_and_pack/card-Kratos.png);
+}
+.kyubsninos {
+    background-image: url(../../Asset/card_and_pack/card-kyubsninos.png);
+}
+
+.lara {
+    background-image: url(../../Asset/card_and_pack/card-Lara.png);
+}
+
+.manga {
+    background-image: url(../../Asset/card_and_pack/card-Manga.png);
+}
+
+.mario {
+    background-image: url(../../Asset/card_and_pack/card-mario.jpg);
+}
+
+.mickey {
+    background-image: url(../../Asset/card_and_pack/card-mickey.jpg);
+}
+
+.optimus {
+    background-image: url(../../Asset/card_and_pack/card-optimus.jpg);
+}
+.pikachu {
+    background-image: url(../../Asset/card_and_pack/card-pikachu.jpg);
+}
+
+.robotcodes {
+    background-image: url(../../Asset/card_and_pack/card-robotcodes.jpeg);
+}
+
+.robotgangster {
+    background-image: url(../../Asset/card_and_pack/card-robotgangster.png);
+}
+
+.robotgun {
+    background-image: url(../../Asset/card_and_pack/card-robotgun.jpeg);
+}
+
+.shibs {
+    background-image: url(../../Asset/card_and_pack/card-shibs.png);
+}
+
+.sonic {
+    background-image: url(../../Asset/card_and_pack/card-Sonic.png);
+}
+.superrobot {
+    background-image: url(../../Asset/card_and_pack/card-superrobot.jpeg);
+}
+
+.tlou {
+    background-image: url(../../Asset/card_and_pack/card-TLOU_2.png);
+}
+
+.totoro {
+    background-image: url(../../Asset/card_and_pack/card-totoro.jpg);
+}
+
+.vador {
+    background-image: url(../../Asset/card_and_pack/card-vador.jpg);
+}
+
+.yoda {
+    background-image: url(../../Asset/card_and_pack/card-yoda.jpg);
+    height: auto;
+    width: auto;
+}
+
+.zidane {
+    background-image: url(../../Asset/card_and_pack/card-zidane.jpg);
+}
+
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes flicker-in-1 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    10.1% {
+        opacity: 1;
+    }
+
+    10.2% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    20.1% {
+        opacity: 1;
+    }
+
+    20.6% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    30.1% {
+        opacity: 1;
+    }
+
+    30.5% {
+        opacity: 1;
+    }
+
+    30.6% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    45.1% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    55.1% {
+        opacity: 0;
+    }
+
+    57% {
+        opacity: 0;
+    }
+
+    57.1% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    60.1% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    65.1% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    75.1% {
+        opacity: 0;
+    }
+
+    77% {
+        opacity: 0;
+    }
+
+    77.1% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    85.1% {
+        opacity: 0;
+    }
+
+    86% {
+        opacity: 0;
+    }
+
+    86.1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flicker-in-1 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    10.1% {
+        opacity: 1;
+    }
+
+    10.2% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    20.1% {
+        opacity: 1;
+    }
+
+    20.6% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    30.1% {
+        opacity: 1;
+    }
+
+    30.5% {
+        opacity: 1;
+    }
+
+    30.6% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    45.1% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    55.1% {
+        opacity: 0;
+    }
+
+    57% {
+        opacity: 0;
+    }
+
+    57.1% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    60.1% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    65.1% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    75.1% {
+        opacity: 0;
+    }
+
+    77% {
+        opacity: 0;
+    }
+
+    77.1% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    85.1% {
+        opacity: 0;
+    }
+
+    86% {
+        opacity: 0;
+    }
+
+    86.1% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
