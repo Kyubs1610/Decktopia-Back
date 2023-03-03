@@ -3,10 +3,11 @@
     position: relative;
     width: 85%;
     height: 80vh;
-    overflow: scroll;
+    overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
     text-align: center;
+    
 }
 
 #collection button{
