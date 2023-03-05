@@ -7,7 +7,7 @@ export const initAllCards = () => {
       createCard(data[i][0])
     }
   } catch (error) {
-    console.log("Error while cards init" + error.message);
+    console.log("Error while cards init: " + error.message);
   }
 }
 
