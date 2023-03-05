@@ -18,7 +18,7 @@ export const register = async (req, res) => {
             [  username, email, hashedPassword]
         );
         res
-        .cookie('rememberme222', '122222', { expires: new Date(Date.now() + 900000), httpOnly: true })
+        .cookie('user_name', username, { expires: new Date(Date.now() + 900000), httpOnly: true })
         .status(200).send({ message: "User created successfully"})
     } catch (error) {
         console.error(error.message);
