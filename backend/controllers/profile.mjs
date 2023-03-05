@@ -27,7 +27,7 @@ export const getUsers = async (req, res) => {
 export const getUserByName = async (req, res) => {
   const { user_name } = req.params
   try {
-    await Pool.query("SELECT * FROM users WHERE id = $1", [id])
+    await Pool.query("SELECT * FROM users WHERE username = $1", [user_name])
   } catch (error) {
     console.error(error.message);
   }
