@@ -15,11 +15,12 @@ const server = Express();
 const PORT = process.env.PORT || 3000;
 // connection database
 dbConnect()
-// body parser
+// Cors, make it compatible with frontend fetch
 server.use(cors({
   origin: true,
   credentials: true,
 }));
+// body parser
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 // cookie parser

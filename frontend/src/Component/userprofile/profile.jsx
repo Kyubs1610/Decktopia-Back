@@ -4,7 +4,31 @@ import React, { useState, useRef } from "react";
 import Header from "..//Header_and_footer/header";
 import image from "..//..//..//src/Asset/card_and_pack/back_empty.png";
 
+const getUserName = () => {
+  return document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("user_name="))
+    ?.split("=")[1];
+}
+
+// const getUserName = () => {
+//     document
+// };
+
+const getProfileData = () => {
+  return fetch("http://51.38.32.47:8000/user/" + "yyy", {
+    credentials: "include"
+  })
+    .then((response) => response.json())
+    .then((data) => console.log("RESPONSE: " + JSON.stringify(data)))
+};
+
 function ProfilePage() {
+
+  console.log("USER NAME: " + getUserName());
+
+  getProfileData()
+
   const [avatar, setAvatar] = useState(null);
   const fileInputRef = useRef();
 
