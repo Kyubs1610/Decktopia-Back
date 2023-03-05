@@ -15,14 +15,17 @@ const PORT = process.env.PORT || 3000;
 // connection database
 dbConnect()
 // body parser
-server.use(cors());
+server.use(cors({
+  origin: true,
+  credentials: true,
+}));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 // cookie parser
 server.use(cookie(process.env.JWT));
 // routes
 server.get("/", (req, res) => {
-    res.send("Home page");
+    res.send("Home page")
 });
 server.get("/logout", (req, res) => {
     res.send("Home page");
