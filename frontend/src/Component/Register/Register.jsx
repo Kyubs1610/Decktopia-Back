@@ -17,6 +17,7 @@ export default function Register()
     // Make the API call to register the user
     fetch('http://51.38.32.47:8000/register', {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
       },
