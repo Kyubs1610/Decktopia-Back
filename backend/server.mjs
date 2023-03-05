@@ -5,7 +5,8 @@ import cors from "cors";
 import * as dotenv from "dotenv";
 import { dbConnect } from "./config/dbConnect.mjs";
 import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
-import { login, getUsers } from "./controllers/login.mjs";
+import { login } from "./controllers/login.mjs";
+import { getUsers } from "./controllers/profile.mjs";
 import { getCards, getCard, createCard, updateCard, deleteCard, initAllCards } from "./controllers/cards.mjs";
 
 // connection server
