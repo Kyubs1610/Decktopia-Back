@@ -26,9 +26,8 @@ export const getUsers = async (req, res) => {
 
 export const getUserByName = async (req, res) => {
   const { user_name } = req.params
-  try {
-    await Pool.query("SELECT * FROM users WHERE username = $1", [user_name])
-  } catch (error) {
-    console.error(error.message);
-  }
+  Pool
+  .query("SELECT * FROM users WHERE username = $1", [user_name])
+  .then((data) => res.json(data.rows[0])) // Send back result
+  .catch((err) => console.error('Error executing query', err.stack))
 };

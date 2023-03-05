@@ -39,7 +39,7 @@ server.put("/register/:id", forgotPassword) //update  user password
 server.post("/login", login); //login
 server.get("/users", getUsers); //get all users
 server.get("/users/:id", getUsers); //get userProfile
-server.get("/user/:name", getUserByName); //get userProfileByName
+server.get("/user/:user_name", getUserByName); //get userProfileByName
 server.delete("/users/:id", deleteUser) //delete user
 server.get("/cards", getCards); //get all cards
 server.get("/cards/:card_id", getCard); //get one card
