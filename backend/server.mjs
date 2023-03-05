@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 import { dbConnect } from "./config/dbConnect.mjs";
 import { register, deleteUser,forgotPassword } from "./controllers/register.mjs";
 import { login } from "./controllers/login.mjs";
-import { getUsers } from "./controllers/profile.mjs";
+import { getUsers, getUserByName } from "./controllers/profile.mjs";
 import { getCards, getCard, createCard, updateCard, deleteCard, initAllCards } from "./controllers/cards.mjs";
 
 // connection server
@@ -39,6 +39,7 @@ server.put("/register/:id", forgotPassword) //update  user password
 server.post("/login", login); //login
 server.get("/users", getUsers); //get all users
 server.get("/users/:id", getUsers); //get userProfile
+server.get("/user/:name", getUserByName); //get userProfileByName
 server.delete("/users/:id", deleteUser) //delete user
 server.get("/cards", getCards); //get all cards
 server.get("/cards/:card_id", getCard); //get one card
