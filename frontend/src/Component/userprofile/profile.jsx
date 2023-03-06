@@ -115,10 +115,7 @@ function ProfilePage() {
         <h3 className="justifyCenter"> Best Deck </h3> 
        
         <div className="collection-container">
-            {collectionData ? "YES" : "NO"}
-          <img src={image} className="collection-card" alt="empty card"/>
-          <img src={image} className="collection-card" alt="empty card"/>
-          <img src={image} className="collection-card" alt="empty card"/>
+            {collectionData ? collectionData.map(card=><img src={image} className="collection-card" alt="empty card"/>) : "NO"}
         </div>
       </div>
     </div>
