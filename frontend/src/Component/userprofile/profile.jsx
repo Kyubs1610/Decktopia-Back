@@ -1,6 +1,6 @@
 import "./profile.css";
 import "..//..//App.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Header from "..//Header_and_footer/header";
 import image from "..//..//..//src/Asset/card_and_pack/back_empty.png";
 
@@ -17,22 +17,34 @@ const getUserName = () => {
   return Cookies.get('user_name')
 };
 
-Cookies.set('bolo', 'aaaaaaaaaa')
-console.log(Cookies.get());
-
 const getProfileData = () => {
-  return fetch("http://51.38.32.47:8000/user/" + "yyy", {
+  return fetch("http://51.38.32.47:8000/user/" + getUserName(), {
     credentials: "include"
   })
     .then((response) => response.json())
-    .then((data) => console.log("RESPONSE: " + JSON.stringify(data)))
+    .then((data) => console.log(data))
 };
 
 function ProfilePage() {
 
-  console.log("USER NAME: " + getUserName());
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  getProfileData()
+  console.log("USERNAME: " + getUserName())
+
+  useEffect(() => {
+    fetch("http://51.38.32.47:8000/user/" + getUserName())
+      .then(response => response.json())
+      .then((userData) => {
+        console.log(userData);
+        setLoading(false);
+        setData(userData);
+      })
+      .catch((e) => {
+        console.error(`An error occurred: ${e}`)
+      });
+  }, []);
 
   const [avatar, setAvatar] = useState(null);
   const fileInputRef = useRef();
@@ -71,7 +83,7 @@ function ProfilePage() {
         />
       
       <div>
-        <label className="userinfo" >Welcome Pseudo</label> <br/>
+        <label className="userinfo" >Welcome {data ? data.username : 'Person!'}</label> <br/>
         <label className="userinfo" >Card Collection : ?/20</label>
       </div>
       </div>
