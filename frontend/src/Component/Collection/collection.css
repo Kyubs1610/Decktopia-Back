@@ -2,13 +2,19 @@
     margin: auto;
     position: relative;
     width: 85%;
-    height: 80vh;
+    height: 91vh;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
     text-align: center;
+    overflow: auto;
+   
     
 }
+
+#collection::-webkit-scrollbar {
+    display: none;
+  }
 
 #collection button{
     font-family: 'Megrim', cursive;
@@ -41,6 +47,7 @@ h2{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    white-space: nowrap;
 }
 
 #cardsCollection div{
