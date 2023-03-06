@@ -4,16 +4,21 @@ import React, { useState, useRef } from "react";
 import Header from "..//Header_and_footer/header";
 import image from "..//..//..//src/Asset/card_and_pack/back_empty.png";
 
-const getUserName = () => {
-  return document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("user_name="))
-    ?.split("=")[1];
-}
+import Cookies from 'js-cookie'
 
 // const getUserName = () => {
-//     document
-// };
+//   return document.cookie
+//     .split("; ")
+//     .find((row) => row.startsWith("user_name="))
+//     ?.split("=")[1];
+// }
+
+const getUserName = () => {
+  return Cookies.get('user_name')
+};
+
+Cookies.set('bolo', 'aaaaaaaaaa')
+console.log(Cookies.get());
 
 const getProfileData = () => {
   return fetch("http://51.38.32.47:8000/user/" + "yyy", {

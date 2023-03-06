@@ -18,7 +18,7 @@ export const register = async (req, res) => {
             [  username, email, hashedPassword]
         );
         res
-        .cookie('user_name', username, { expires: new Date(Date.now() + 1000), sameSite: "Lax"})//, httpOnly: false }) //http_only false for JS
+        .cookie('user_name', username, { expires: new Date(Date.now() + 1000000), sameSite: "Lax"})//, httpOnly: false }) //http_only false for JS
         .status(200).send({ message: "User created successfully"})
     } catch (error) {
         console.error(error.message);
