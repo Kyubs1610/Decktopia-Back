@@ -2,7 +2,7 @@ import "./profile.css";
 import "..//..//App.css";
 import React, { useState, useRef, useEffect } from "react";
 import Header from "..//Header_and_footer/header";
-// import image from "..//..//..//src/Asset/card_and_pack/back_empty.png";
+import image from "..//..//..//src/Asset/card_and_pack/back_empty.png";
 
 import Cookies from 'js-cookie'
 
