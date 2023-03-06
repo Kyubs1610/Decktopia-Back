@@ -103,8 +103,8 @@ function ProfilePage() {
         />
       
       <div>
-        <label className="userinfo" >Welcome {data ? data.username : 'Person!'}</label> <br/>
-        <label className="userinfo" >Card Collection : ?/20</label>
+        <label className="userinfo" >Welcome {profileData ? profileData.username : 'Person!'}</label> <br/>
+        <label className="userinfo" >Card Collection : {collectionData ? collectionData.length : '?'}/20</label>
       </div>
       </div>
       </div>
